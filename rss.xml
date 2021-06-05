@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[small land]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://uh-zz.github.io/blog</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 05 Jun 2021 01:05:45 GMT</lastBuildDate><item><title><![CDATA[達人プログラマー 熟達に向けたあなたの旅(第2版)]]></title><description><![CDATA[…]]></description><link>https://uh-zz.github.io/blog/2021/03/pragmatic-programmer/</link><guid isPermaLink="false">https://uh-zz.github.io/blog/2021/03/pragmatic-programmer/</guid><pubDate>Fri, 05 Mar 2021 08:12:03 GMT</pubDate><content:encoded>&lt;h2&gt;はじめに…&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[small land]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://uh-zz.github.io/blog</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 05 Jun 2021 01:19:33 GMT</lastBuildDate><item><title><![CDATA[達人プログラマー 熟達に向けたあなたの旅(第2版)]]></title><description><![CDATA[…]]></description><link>https://uh-zz.github.io/blog/2021/03/pragmatic-programmer/</link><guid isPermaLink="false">https://uh-zz.github.io/blog/2021/03/pragmatic-programmer/</guid><pubDate>Fri, 05 Mar 2021 08:12:03 GMT</pubDate><content:encoded>&lt;h2&gt;はじめに…&lt;/h2&gt;
 &lt;p&gt;エンジニアとしてコードを書くようになって、もうすぐ２年というタイミングに
 差し掛かりました&lt;/p&gt;
 &lt;p&gt;心境の変化としては、がむしゃらに毎日のタスクを通して「動く」コードを書くことから、
@@ -214,52 +214,7 @@ TDA(Tell, Don’t Ask)&lt;/p&gt;
 &lt;p&gt;(2.0 は経路を TLS 化していることで、1.0 よりも提示するパラメータが少なくなっているという事実はあるそうな)&lt;/p&gt;
 &lt;h2&gt;まとめ&lt;/h2&gt;
 &lt;p&gt;実装のことを考えてこれからも 2.0 を使っていきましょうという締めです。(Twitter 以外のほとんどのアプリが 2.0 を採用していることもあり、、)
-この辺の仕様がやはり読んだだけではイメージしづらいところがありますので、簡単に実装してみて実務で使えるようになりたいですという感想です。(RFC のドキュメントも読み慣れると恩恵ありそうです)&lt;/p&gt;</content:encoded></item><item><title><![CDATA[システム設計-part3-]]></title><description><![CDATA[…]]></description><link>https://uh-zz.github.io/blog/2020/12/systems-architecture-part-3/</link><guid isPermaLink="false">https://uh-zz.github.io/blog/2020/12/systems-architecture-part-3/</guid><pubDate>Sat, 05 Dec 2020 08:12:03 GMT</pubDate><content:encoded>&lt;p&gt;バックエンドエンジニアの&lt;a href=&quot;https://github.com/kamranahmedse/developer-roadmap#back-end-roadmap&quot;&gt;ロードマップ&lt;/a&gt;に沿ってエンジニアとしての自己肯定感を養うシリーズです。&lt;/p&gt;
-&lt;p&gt;※&lt;a href=&quot;https://www.amazon.co.jp/%E7%8F%BE%E5%A0%B4%E3%81%A7%E5%BD%B9%E7%AB%8B%E3%81%A4%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E8%A8%AD%E8%A8%88%E3%81%AE%E5%8E%9F%E5%89%87-%E5%A4%89%E6%9B%B4%E3%82%92%E6%A5%BD%E3%81%A7%E5%AE%89%E5%85%A8%E3%81%AB%E3%81%99%E3%82%8B%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E6%8C%87%E5%90%91%E3%81%AE%E5%AE%9F%E8%B7%B5%E6%8A%80%E6%B3%95-%E5%A2%97%E7%94%B0-%E4%BA%A8/dp/477419087X&quot;&gt;現場で役立つシステム設計の原則&lt;/a&gt;を元に記事を作成しています。&lt;/p&gt;
-&lt;h3&gt;目次&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#%E6%A5%AD%E5%8B%99%E3%83%AD%E3%82%B8%E3%83%83%E3%82%AF&quot;&gt;業務ロジック&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89%E3%82%92%E3%83%AD%E3%82%B8%E3%83%83%E3%82%AF%E3%81%AE%E7%BD%AE%E3%81%8D%E5%A0%B4%E6%89%80%E3%81%AB%E3%81%99%E3%82%8B&quot;&gt;メソッドをロジックの置き場所にする&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#%E5%A4%9A%E6%85%8B&quot;&gt;多態&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#%E5%88%97%E6%8C%99%E5%9E%8B&quot;&gt;列挙型&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;業務ロジック&lt;/h2&gt;
-&lt;h3&gt;メソッドをロジックの置き場所にする&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.amazon.co.jp/%E7%8F%BE%E5%A0%B4%E3%81%A7%E5%BD%B9%E7%AB%8B%E3%81%A4%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E8%A8%AD%E8%A8%88%E3%81%AE%E5%8E%9F%E5%89%87-%E5%A4%89%E6%9B%B4%E3%82%92%E6%A5%BD%E3%81%A7%E5%AE%89%E5%85%A8%E3%81%AB%E3%81%99%E3%82%8B%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E6%8C%87%E5%90%91%E3%81%AE%E5%AE%9F%E8%B7%B5%E6%8A%80%E6%B3%95-%E5%A2%97%E7%94%B0-%E4%BA%A8/dp/477419087X&quot;&gt;現場で役立つシステム設計の原則&lt;/a&gt;では、“従来”という表現をされていますが、手続き型と呼ばれている設計ではデータクラスと機能クラスに分けて表現します。&lt;/p&gt;
-&lt;p&gt;その名の通りデータクラスはデータを格納して、機能クラスはデータクラスのデータを判断、加工、計算するといった使い方です。&lt;/p&gt;
-&lt;p&gt;この手続き型の問題は、拡張するときの変更箇所の特定に時間がかかるということです。&lt;/p&gt;
-&lt;p&gt;なぜかというと、データクラスが参照できるクラスであれば、アーキテクチャのどのレイヤーにでもロジックが書けてしまうからです。&lt;/p&gt;
-&lt;p&gt;便利のようには見えますが、先に言った変更箇所の特定に時間がかかるこの方法は最善ではありません。&lt;/p&gt;
-&lt;p&gt;解決としては、Java 本来のクラスの使い方を踏襲することです。&lt;/p&gt;
-&lt;p&gt;データとロジックを１つのクラスに閉じてしまおうという考え方です。&lt;/p&gt;
-&lt;p&gt;{% highlight java %}
-class PersonName {&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;private String firstName;
-
-private String lastName;
-
-String fullName() {
-	return String.format(&amp;quot;%s %s&amp;quot;, firstName, lastName);
-}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;}
-{% endhighlight %}&lt;/p&gt;
-&lt;p&gt;データである&lt;code class=&quot;language-text&quot;&gt;firstName&lt;/code&gt;と&lt;code class=&quot;language-text&quot;&gt;lastName&lt;/code&gt;、そしてロジック(メソッド)の&lt;code class=&quot;language-text&quot;&gt;fullName()&lt;/code&gt;が同じクラス内にあります。&lt;/p&gt;
-&lt;p&gt;こうするとクラス内でデータを扱うことができて変更もこのクラス内で閉じることができます。&lt;/p&gt;
-&lt;p&gt;また、メソッドはクラス内のインスタンス変数(&lt;code class=&quot;language-text&quot;&gt;firstName&lt;/code&gt;や&lt;code class=&quot;language-text&quot;&gt;lastName&lt;/code&gt;)を使って何らかの処理を行う用途で作成します。&lt;/p&gt;
-&lt;h3&gt;クラスが肥大化したら小さく分ける&lt;/h3&gt;
-&lt;p&gt;これもやってしまいがちですが、改修を繰り返していくうちに、クラスが大きくなっていきます。&lt;/p&gt;
-&lt;p&gt;大きくなったクラスは手続き型同様に変更箇所の特定に時間がかかります。&lt;/p&gt;
-&lt;p&gt;それを防ぐために、大きくなってしまったクラスを次のルールで細分化します。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;インスタンス変数とメソッドを対応付ける&lt;/li&gt;
-&lt;li&gt;メソッドが全てのインスタンス変数を使うようになる&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;細分化したクラスはそれぞれ独立性が高くなるので、別のクラスで使う時にも再利用ができるようになります。&lt;/p&gt;
-&lt;p&gt;こうした関連の強いデータとロジックをまとめたクラスを&lt;strong&gt;凝集度が高い&lt;/strong&gt;と言います。&lt;/p&gt;
-&lt;p&gt;凝集度が高いクラスは、変更箇所もそのクラスに閉じることになるので、疎結合になり他への影響が少なくて済みます。&lt;/p&gt;
-&lt;h3&gt;ここまでのまとめ&lt;/h3&gt;
-&lt;p&gt;時すでに遅しと言いますか、現場での反省点をつらつら振り返ってベストプラクティスを学んでいるという感じです。&lt;/p&gt;
-&lt;p&gt;次回に活かそうというモチベーションは上がるのでいい復習方法だと感じます。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[システム設計-part2-]]></title><description><![CDATA[…]]></description><link>https://uh-zz.github.io/blog/2020/12/systems-architecture-part-2/</link><guid isPermaLink="false">https://uh-zz.github.io/blog/2020/12/systems-architecture-part-2/</guid><pubDate>Sat, 05 Dec 2020 08:12:03 GMT</pubDate><content:encoded>&lt;p&gt;バックエンドエンジニアの&lt;a href=&quot;https://github.com/kamranahmedse/developer-roadmap#back-end-roadmap&quot;&gt;ロードマップ&lt;/a&gt;に沿ってエンジニアとしての自己肯定感を養うシリーズです。&lt;/p&gt;
+この辺の仕様がやはり読んだだけではイメージしづらいところがありますので、簡単に実装してみて実務で使えるようになりたいですという感想です。(RFC のドキュメントも読み慣れると恩恵ありそうです)&lt;/p&gt;</content:encoded></item><item><title><![CDATA[システム設計-part2-]]></title><description><![CDATA[…]]></description><link>https://uh-zz.github.io/blog/2020/12/systems-architecture-part-2/</link><guid isPermaLink="false">https://uh-zz.github.io/blog/2020/12/systems-architecture-part-2/</guid><pubDate>Sat, 05 Dec 2020 08:12:03 GMT</pubDate><content:encoded>&lt;p&gt;バックエンドエンジニアの&lt;a href=&quot;https://github.com/kamranahmedse/developer-roadmap#back-end-roadmap&quot;&gt;ロードマップ&lt;/a&gt;に沿ってエンジニアとしての自己肯定感を養うシリーズです。&lt;/p&gt;
 &lt;p&gt;※&lt;a href=&quot;https://www.amazon.co.jp/%E7%8F%BE%E5%A0%B4%E3%81%A7%E5%BD%B9%E7%AB%8B%E3%81%A4%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E8%A8%AD%E8%A8%88%E3%81%AE%E5%8E%9F%E5%89%87-%E5%A4%89%E6%9B%B4%E3%82%92%E6%A5%BD%E3%81%A7%E5%AE%89%E5%85%A8%E3%81%AB%E3%81%99%E3%82%8B%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E6%8C%87%E5%90%91%E3%81%AE%E5%AE%9F%E8%B7%B5%E6%8A%80%E6%B3%95-%E5%A2%97%E7%94%B0-%E4%BA%A8/dp/477419087X&quot;&gt;現場で役立つシステム設計の原則&lt;/a&gt;を元に記事を作成しています。&lt;/p&gt;
 &lt;h3&gt;目次&lt;/h3&gt;
 &lt;ul&gt;
@@ -398,7 +353,52 @@ FeeType feeType = FeeType.valueOf(feeTypeName)&lt;/p&gt;
 {% endhighlight %}&lt;/p&gt;
 &lt;p&gt;enum クラスの valueOf()メソッドは、Map の get()メソッドと同様に、if 文を使うことなく料金区分ごとのオブジェクトを取得できます。このような振る舞いを持った列挙型(enum)を&lt;strong&gt;区分オブジェクト&lt;/strong&gt;と言います。&lt;/p&gt;
 &lt;h3&gt;ここまでのまとめ&lt;/h3&gt;
-&lt;p&gt;前回同様、コードをスッキリさせる手法を見てきました。インターフェースを使うことで抽象的なメソッドを作ったり、列挙型を使って if 文をなるべく減らせることはコードの保守性、拡張性を高めてくれますね。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[システム設計-part1-]]></title><description><![CDATA[バックエンドエンジニアのロードマップに沿ってエンジニアとしての自己肯定感を養うシリーズです。 ※現場で役立つシステム設計の原則を元に記事を作成しています。 目次 設計パターン 値オブジェクト コレクションオブジェクト 設計パターン 値オブジェクト(Value Object…]]></description><link>https://uh-zz.github.io/blog/2020/12/systems-architecture-part-1/</link><guid isPermaLink="false">https://uh-zz.github.io/blog/2020/12/systems-architecture-part-1/</guid><pubDate>Sat, 05 Dec 2020 08:12:03 GMT</pubDate><content:encoded>&lt;p&gt;バックエンドエンジニアの&lt;a href=&quot;https://github.com/kamranahmedse/developer-roadmap#back-end-roadmap&quot;&gt;ロードマップ&lt;/a&gt;に沿ってエンジニアとしての自己肯定感を養うシリーズです。&lt;/p&gt;
+&lt;p&gt;前回同様、コードをスッキリさせる手法を見てきました。インターフェースを使うことで抽象的なメソッドを作ったり、列挙型を使って if 文をなるべく減らせることはコードの保守性、拡張性を高めてくれますね。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[システム設計-part3-]]></title><description><![CDATA[…]]></description><link>https://uh-zz.github.io/blog/2020/12/systems-architecture-part-3/</link><guid isPermaLink="false">https://uh-zz.github.io/blog/2020/12/systems-architecture-part-3/</guid><pubDate>Sat, 05 Dec 2020 08:12:03 GMT</pubDate><content:encoded>&lt;p&gt;バックエンドエンジニアの&lt;a href=&quot;https://github.com/kamranahmedse/developer-roadmap#back-end-roadmap&quot;&gt;ロードマップ&lt;/a&gt;に沿ってエンジニアとしての自己肯定感を養うシリーズです。&lt;/p&gt;
+&lt;p&gt;※&lt;a href=&quot;https://www.amazon.co.jp/%E7%8F%BE%E5%A0%B4%E3%81%A7%E5%BD%B9%E7%AB%8B%E3%81%A4%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E8%A8%AD%E8%A8%88%E3%81%AE%E5%8E%9F%E5%89%87-%E5%A4%89%E6%9B%B4%E3%82%92%E6%A5%BD%E3%81%A7%E5%AE%89%E5%85%A8%E3%81%AB%E3%81%99%E3%82%8B%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E6%8C%87%E5%90%91%E3%81%AE%E5%AE%9F%E8%B7%B5%E6%8A%80%E6%B3%95-%E5%A2%97%E7%94%B0-%E4%BA%A8/dp/477419087X&quot;&gt;現場で役立つシステム設計の原則&lt;/a&gt;を元に記事を作成しています。&lt;/p&gt;
+&lt;h3&gt;目次&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#%E6%A5%AD%E5%8B%99%E3%83%AD%E3%82%B8%E3%83%83%E3%82%AF&quot;&gt;業務ロジック&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89%E3%82%92%E3%83%AD%E3%82%B8%E3%83%83%E3%82%AF%E3%81%AE%E7%BD%AE%E3%81%8D%E5%A0%B4%E6%89%80%E3%81%AB%E3%81%99%E3%82%8B&quot;&gt;メソッドをロジックの置き場所にする&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E5%A4%9A%E6%85%8B&quot;&gt;多態&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E5%88%97%E6%8C%99%E5%9E%8B&quot;&gt;列挙型&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;業務ロジック&lt;/h2&gt;
+&lt;h3&gt;メソッドをロジックの置き場所にする&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.amazon.co.jp/%E7%8F%BE%E5%A0%B4%E3%81%A7%E5%BD%B9%E7%AB%8B%E3%81%A4%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E8%A8%AD%E8%A8%88%E3%81%AE%E5%8E%9F%E5%89%87-%E5%A4%89%E6%9B%B4%E3%82%92%E6%A5%BD%E3%81%A7%E5%AE%89%E5%85%A8%E3%81%AB%E3%81%99%E3%82%8B%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E6%8C%87%E5%90%91%E3%81%AE%E5%AE%9F%E8%B7%B5%E6%8A%80%E6%B3%95-%E5%A2%97%E7%94%B0-%E4%BA%A8/dp/477419087X&quot;&gt;現場で役立つシステム設計の原則&lt;/a&gt;では、“従来”という表現をされていますが、手続き型と呼ばれている設計ではデータクラスと機能クラスに分けて表現します。&lt;/p&gt;
+&lt;p&gt;その名の通りデータクラスはデータを格納して、機能クラスはデータクラスのデータを判断、加工、計算するといった使い方です。&lt;/p&gt;
+&lt;p&gt;この手続き型の問題は、拡張するときの変更箇所の特定に時間がかかるということです。&lt;/p&gt;
+&lt;p&gt;なぜかというと、データクラスが参照できるクラスであれば、アーキテクチャのどのレイヤーにでもロジックが書けてしまうからです。&lt;/p&gt;
+&lt;p&gt;便利のようには見えますが、先に言った変更箇所の特定に時間がかかるこの方法は最善ではありません。&lt;/p&gt;
+&lt;p&gt;解決としては、Java 本来のクラスの使い方を踏襲することです。&lt;/p&gt;
+&lt;p&gt;データとロジックを１つのクラスに閉じてしまおうという考え方です。&lt;/p&gt;
+&lt;p&gt;{% highlight java %}
+class PersonName {&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;private String firstName;
+
+private String lastName;
+
+String fullName() {
+	return String.format(&amp;quot;%s %s&amp;quot;, firstName, lastName);
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;}
+{% endhighlight %}&lt;/p&gt;
+&lt;p&gt;データである&lt;code class=&quot;language-text&quot;&gt;firstName&lt;/code&gt;と&lt;code class=&quot;language-text&quot;&gt;lastName&lt;/code&gt;、そしてロジック(メソッド)の&lt;code class=&quot;language-text&quot;&gt;fullName()&lt;/code&gt;が同じクラス内にあります。&lt;/p&gt;
+&lt;p&gt;こうするとクラス内でデータを扱うことができて変更もこのクラス内で閉じることができます。&lt;/p&gt;
+&lt;p&gt;また、メソッドはクラス内のインスタンス変数(&lt;code class=&quot;language-text&quot;&gt;firstName&lt;/code&gt;や&lt;code class=&quot;language-text&quot;&gt;lastName&lt;/code&gt;)を使って何らかの処理を行う用途で作成します。&lt;/p&gt;
+&lt;h3&gt;クラスが肥大化したら小さく分ける&lt;/h3&gt;
+&lt;p&gt;これもやってしまいがちですが、改修を繰り返していくうちに、クラスが大きくなっていきます。&lt;/p&gt;
+&lt;p&gt;大きくなったクラスは手続き型同様に変更箇所の特定に時間がかかります。&lt;/p&gt;
+&lt;p&gt;それを防ぐために、大きくなってしまったクラスを次のルールで細分化します。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;インスタンス変数とメソッドを対応付ける&lt;/li&gt;
+&lt;li&gt;メソッドが全てのインスタンス変数を使うようになる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;細分化したクラスはそれぞれ独立性が高くなるので、別のクラスで使う時にも再利用ができるようになります。&lt;/p&gt;
+&lt;p&gt;こうした関連の強いデータとロジックをまとめたクラスを&lt;strong&gt;凝集度が高い&lt;/strong&gt;と言います。&lt;/p&gt;
+&lt;p&gt;凝集度が高いクラスは、変更箇所もそのクラスに閉じることになるので、疎結合になり他への影響が少なくて済みます。&lt;/p&gt;
+&lt;h3&gt;ここまでのまとめ&lt;/h3&gt;
+&lt;p&gt;時すでに遅しと言いますか、現場での反省点をつらつら振り返ってベストプラクティスを学んでいるという感じです。&lt;/p&gt;
+&lt;p&gt;次回に活かそうというモチベーションは上がるのでいい復習方法だと感じます。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[システム設計-part1-]]></title><description><![CDATA[バックエンドエンジニアのロードマップに沿ってエンジニアとしての自己肯定感を養うシリーズです。 ※現場で役立つシステム設計の原則を元に記事を作成しています。 目次 設計パターン 値オブジェクト コレクションオブジェクト 設計パターン 値オブジェクト(Value Object…]]></description><link>https://uh-zz.github.io/blog/2020/12/systems-architecture-part-1/</link><guid isPermaLink="false">https://uh-zz.github.io/blog/2020/12/systems-architecture-part-1/</guid><pubDate>Sat, 05 Dec 2020 08:12:03 GMT</pubDate><content:encoded>&lt;p&gt;バックエンドエンジニアの&lt;a href=&quot;https://github.com/kamranahmedse/developer-roadmap#back-end-roadmap&quot;&gt;ロードマップ&lt;/a&gt;に沿ってエンジニアとしての自己肯定感を養うシリーズです。&lt;/p&gt;
 &lt;p&gt;※&lt;a href=&quot;https://www.amazon.co.jp/%E7%8F%BE%E5%A0%B4%E3%81%A7%E5%BD%B9%E7%AB%8B%E3%81%A4%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E8%A8%AD%E8%A8%88%E3%81%AE%E5%8E%9F%E5%89%87-%E5%A4%89%E6%9B%B4%E3%82%92%E6%A5%BD%E3%81%A7%E5%AE%89%E5%85%A8%E3%81%AB%E3%81%99%E3%82%8B%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E6%8C%87%E5%90%91%E3%81%AE%E5%AE%9F%E8%B7%B5%E6%8A%80%E6%B3%95-%E5%A2%97%E7%94%B0-%E4%BA%A8/dp/477419087X&quot;&gt;現場で役立つシステム設計の原則&lt;/a&gt;を元に記事を作成しています。&lt;/p&gt;
 &lt;h3&gt;目次&lt;/h3&gt;
 &lt;ul&gt;
