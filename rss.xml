@@ -1,0 +1,1036 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[small land]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://uh-zz.github.io/blog</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 05 Jun 2021 01:05:45 GMT</lastBuildDate><item><title><![CDATA[達人プログラマー 熟達に向けたあなたの旅(第2版)]]></title><description><![CDATA[…]]></description><link>https://uh-zz.github.io/blog/2021/03/pragmatic-programmer/</link><guid isPermaLink="false">https://uh-zz.github.io/blog/2021/03/pragmatic-programmer/</guid><pubDate>Fri, 05 Mar 2021 08:12:03 GMT</pubDate><content:encoded>&lt;h2&gt;はじめに…&lt;/h2&gt;
+&lt;p&gt;エンジニアとしてコードを書くようになって、もうすぐ２年というタイミングに
+差し掛かりました&lt;/p&gt;
+&lt;p&gt;心境の変化としては、がむしゃらに毎日のタスクを通して「動く」コードを書くことから、
+メンテナンスしやすいコードを意識することが多くなりました&lt;/p&gt;
+&lt;p&gt;「達人プログラマー」は、プログラマとして次のステップを踏み出そうというときにベストな一冊となっています&lt;/p&gt;
+&lt;p&gt;読みながら取ったメモを編集しましたのでざっくり内容を見てみたい方はどうぞ〜&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h2&gt;目次&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#%E9%81%94%E4%BA%BA%E3%81%AE%E5%93%B2%E5%AD%A6&quot;&gt;第 1 章 達人の哲学&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E9%81%94%E4%BA%BA%E3%81%AE%E3%82%A2%E3%83%97%E3%83%AD%E3%83%BC%E3%83%81&quot;&gt;第 2 章 達人のアプローチ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E5%9F%BA%E6%9C%AC%E7%9A%84%E3%81%AA%E3%83%84%E3%83%BC%E3%83%AB&quot;&gt;第 3 章 基本的なツール&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E5%A6%84%E6%83%B3%E3%81%AE%E9%81%94%E4%BA%BA&quot;&gt;第 4 章 妄想の達人&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E6%9F%B3%E3%81%AB%E9%9B%AA%E6%8A%98%E3%82%8C%E3%81%AA%E3%81%97&quot;&gt;第 5 章 柳に雪折れなし&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E4%B8%A6%E8%A1%8C%E6%80%A7&quot;&gt;第 6 章 並行性&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E6%AE%B5%E9%9A%8E&quot;&gt;第 7 章 コーディング段階&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%82%92%E5%A7%8B%E3%82%81%E3%82%8B%E5%89%8D%E3%81%AB&quot;&gt;第 8 章 プロジェクトを始める前に&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E9%81%94%E4%BA%BA%E3%81%AE%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88&quot;&gt;第 9 章 達人のプロジェクト&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E3%81%BE%E3%81%A8%E3%82%81&quot;&gt;まとめ&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h2&gt;達人の哲学&lt;/h2&gt;
+&lt;p&gt;ソフトウェアのエントロピーの話は心当たりがありすぎた&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;エントロピー&lt;/strong&gt; とは、物理学の用語で「ある系における無秩序の度合い」のことで、
+時間が経つたびにエントロピーは増大していく&lt;/p&gt;
+&lt;p&gt;ソフトウェアも同様に、時間が経つたびに無秩序になっていく&lt;/p&gt;
+&lt;p&gt;これを &lt;strong&gt;割れ窓理論&lt;/strong&gt; というメカニズムで説明していたのもわかりやすかった&lt;/p&gt;
+&lt;p&gt;窓が１枚割れているのを長期間放置しておくと、それをメンテナンスする気力もなくなるマインドが
+植え付けられて、最終的には建物全体が破壊されていく&lt;/p&gt;
+&lt;p&gt;ソフトウェアではこれを、悪い設計、誤った意思決定、質の悪いコードに見立てることができて、
+放置しておくと潜在的なバグを生み出すことになりかねない&lt;/p&gt;
+&lt;p&gt;こういった「割れた窓」を発見したと同時に速やかに修復するべきだ、そして時間がなくてもコメントを
+残すといった何らかのアクションをしてくださいと言った主張だった&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;茹でガエルの話は、ある程度精神的に余裕がないと気づくことが難しいと感じた&lt;/p&gt;
+&lt;p&gt;あっつあつの熱湯にカエルを放り込むとびっくりして飛び出してくるが、
+常温の水にカエルを入れて段々と温度をあげていくと、カエルは気づかないまま茹で上がると言った話&lt;/p&gt;
+&lt;p&gt;要するに、いつもメタ認知を意識して行動しようということ
+これは仕事に限らずしていきたい&lt;/p&gt;
+&lt;br&gt;
+&lt;h2&gt;達人のアプローチ&lt;/h2&gt;
+&lt;p&gt;章前半の DRY 原則については膝を叩いて同意できるといった実感があった&lt;/p&gt;
+&lt;p&gt;また、曳光弾の考え方については目からウロコだった
+複雑なシステムを構築していくときに、各機能を一つずつ作り込んでいくのではなく、
+各機能を最低限使えるようにするシンプルな箇所を探していくといった手法&lt;/p&gt;
+&lt;p&gt;シンプルな箇所に最初に取り組んでその他は後回しにする（未実装）というのは初心者視点では
+至らないと感じた&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;章後半のプロトタイプ、見積もりの話は現実でも問われることがあるものの、
+実際に見積もりが大きく外れるような難しい設計をした経験がないということもあって実感が持てなかった&lt;/p&gt;
+&lt;br&gt;
+&lt;blockquote&gt;
+&lt;p&gt;「言語の制約はそれを使う人の世界を制限する」 - ヴィトゲンシュタイン&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;毎回トピックの初めに、名言があってモチベーションが上がる&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;プログラミング言語に限らず、日常使っている日本語にも問題に対する考え方や
+コミュニケーションに対する考え方に影響を及ぼしているという構造主義的な話もあって興味深い&lt;/p&gt;
+&lt;br&gt;
+&lt;h2&gt;基本的なツール&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;「悩んでいる君、そしてその悩みの原因は他の誰でもない、君自身によるものだ」
+ということを知るのはつらいものだ　- ソフォクレス&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;デバッグの最初の心構え&lt;/p&gt;
+&lt;p&gt;→ &lt;strong&gt;「パニクるな」&lt;/strong&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h2&gt;妄想の達人&lt;/h2&gt;
+&lt;p&gt;契約プログラミング(DbC)素晴らしい&lt;/p&gt;
+&lt;p&gt;仕様を記述(契約)しておくことで、プログラマにバグになりかねないようなことをさせないプログラミングをする&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;トラッシュ（メチャクチャ）にするのではなく、クラッシュ（停止）させる&lt;/p&gt;
+&lt;p&gt;Go の&lt;code class=&quot;language-text&quot;&gt;if err != nil&lt;/code&gt;で毎回エラーチェックしてるのはこれに則っているのかなと思った。&lt;/p&gt;
+&lt;p&gt;確かに catch で新しいエラーがくるたびに分類するのは怠い気もするかな、、&lt;/p&gt;
+&lt;br&gt;
+&lt;h2&gt;柳に雪折れなし&lt;/h2&gt;
+&lt;p&gt;列車の衝突事故を例にして依存をわかりやすく説明している&lt;/p&gt;
+&lt;p&gt;１つのメソッドであまりにも多くのことをやろうとすると、
+連結されている全ての車両に影響が及ぶように、メソッドと属性が影響を受ける&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;例)
+割引料金を算出するメソッドの中で、これらの操作を行う。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;顧客の注文履歴を参照する&lt;/li&gt;
+&lt;li&gt;注文履歴から特定の注文オブジェクトを取得する&lt;/li&gt;
+&lt;li&gt;注文オブジェクトの総額を返す&lt;/li&gt;
+&lt;li&gt;総額から割引した値をオブジェクトにセットする&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;次のような考え方がある&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;照会せずに依頼する
+TDA(Tell, Don’t Ask)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;つまり、取得した結果でオブジェクトを更新するのではなく、
+メソッドに更新や参照を依頼する&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;デメテルの法則&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;プログラミングはコードについての話であるが、プログラムはデータについての話である&lt;/li&gt;
+&lt;li&gt;継承は「結合」&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;継承の代わり以下のテクニックを使用する&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;インターフェースとプロトコル&lt;/li&gt;
+&lt;li&gt;委譲&lt;/li&gt;
+&lt;li&gt;mixin と trait&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;ポリモーフィズムを表現するためにインターフェースを愛用する&lt;/p&gt;
+&lt;p&gt;設定をサービス API の背後に配置する&lt;/p&gt;
+&lt;br&gt;
+&lt;h2&gt;並行性&lt;/h2&gt;
+&lt;p&gt;時間的な結合を破壊する&lt;/p&gt;
+&lt;p&gt;並行性を向上させるためにワークフローを分析する&lt;/p&gt;
+&lt;p&gt;並行処理を考えるときは時間のかかる手順を見つけることが大事&lt;/p&gt;
+&lt;p&gt;並行処理はソフトウェアのメカニズムであり、並列処理はハードウェアの関心事です　 ← &lt;strong&gt;大事!!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;共有状態は間違った状態　 ←&lt;strong&gt;泣&lt;/strong&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;セマフォー&lt;/strong&gt; とは、ある時点で誰か一人しか占有できない「なんらかのもの」&lt;/p&gt;
+&lt;p&gt;相互排他形式を説明するためのキーワード&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;アクターとプロセス&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;アクター&lt;/strong&gt; とは局所的かつ固有の状態を保持した、独立した仮想プロセッサ&lt;/p&gt;
+&lt;p&gt;各アクターはメールボックスを備えている&lt;/p&gt;
+&lt;p&gt;メールボックスにメッセージが届くと、アクターが待機中の場合はメッセージ処理を始める&lt;/p&gt;
+&lt;p&gt;処理が完了すると、メールボックス内の別のメッセージを処理する&lt;/p&gt;
+&lt;p&gt;メールボックスが空だと、アクターは待機状態に戻る&lt;/p&gt;
+&lt;p&gt;メッセージを処理するときに、アクターは他アクターを生成したり
+アクター同士でメッセージを送ったりする
+次のメッセージを処理する時に遷移する新たな状態をつくることもできる&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;プロセス&lt;/strong&gt; とは汎用プロセッサのことであり、並行処理を簡単にするために OS によって
+実装される&lt;/p&gt;
+&lt;p&gt;プロセスはアクターのように振る舞う制約が課されている&lt;/p&gt;
+&lt;p&gt;共有状態を持たないアクターを並行処理で使用する&lt;/p&gt;
+&lt;p&gt;アクターモデルでは明示的な並行処理が必要ない
+→ 状態を保持しないため&lt;/p&gt;
+&lt;br&gt;
+&lt;h2&gt;コーディング段階&lt;/h2&gt;
+&lt;p&gt;偶発的プログラミングを行わないこと&lt;/p&gt;
+&lt;p&gt;新人に対して、コードの詳細をできるか&lt;/p&gt;
+&lt;p&gt;→ 　できない場合は偶発的プログラミングに頼ってる可能性あり&lt;/p&gt;
+&lt;p&gt;仮定をドキュメント化する。&lt;/p&gt;
+&lt;p&gt;他メンバーとのコミュニケーションを効率化したり、心の中にある仮定を明確にする&lt;/p&gt;
+&lt;p&gt;→ 　契約による設計(DbC)が参考になる&lt;/p&gt;
+&lt;p&gt;過去のしがらみにとらわれてはいけない。
+既存のコードによって未来のコードが影響されないようにする&lt;/p&gt;
+&lt;p&gt;自分の行った作業が次に行う作業の制約になってはいけない ←&lt;strong&gt;大事!!&lt;/strong&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;アルゴリズムのオーダーを見積もること&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;ソフトウェアは「建築」ではなく「ガーデニング」に近い ←&lt;strong&gt;大事!!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;リファクタリングはごくたまにしか実行しない特別かつ高尚な儀式的アクティビティ
+ではない&lt;/p&gt;
+&lt;p&gt;雑草抜きや落ち葉をかき集めるようなリスクの低い、ちょっとした作業を
+日々実施するアクティビティである。&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;テストとはバグを見つけることではない&lt;/p&gt;
+&lt;p&gt;テストの利点は、テストについて考え、テストを記述しているときにあり、
+テストを実行しているときではない&lt;/p&gt;
+&lt;p&gt;→ テストを契約と見做せば重要度とモチベーションの変化になるのではないか&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;象を一頭食べるにはどうすれば良いか&lt;/p&gt;
+&lt;p&gt;→ 一口ずつ食べる ←&lt;strong&gt;大事!!&lt;/strong&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;明確な目的地を心に描けてなかった場合、どのような方法論であっても
+堂々巡りになってしまう可能性がある。 ←&lt;strong&gt;泣&lt;/strong&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h2&gt;プロジェクトを始める前に&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;ひとりぼっちでコーディングに取り組んではいけない&lt;/strong&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h2&gt;達人のプロジェクト&lt;/h2&gt;
+&lt;p&gt;猫の群れを飼い慣らすことに匹敵するほど、優秀なプログラマーをまとめるのは難しい&lt;/p&gt;
+&lt;p&gt;50 人はチームとは言わずに「群れ」といった方がしっくりくる&lt;/p&gt;
+&lt;p&gt;事を成し遂げるにはまずスケジュールする&lt;/p&gt;
+&lt;p&gt;カーゴカルト的な手法は、開発においてもテストやツールにおいても危険&lt;/p&gt;
+&lt;p&gt;ユーザーが必要としたタイミングで調達すること&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;早めにテスト、何度もテスト、自動でテスト&lt;/strong&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h2&gt;まとめ&lt;/h2&gt;
+&lt;p&gt;このタイミングで１周できたのは幸運でした。&lt;/p&gt;
+&lt;p&gt;折に触れてエンジニアライフを通して再読したい本と思います&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;プログラマーに限らず、エンジニアリングに関わるみんなに読んで欲しい!!&lt;/strong&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;</content:encoded></item><item><title><![CDATA[OAuthについて]]></title><description><![CDATA[バックエンドエンジニアのロードマップに沿ってエンジニアとしての自己肯定感を養うシリーズです。 目次 OAuth とは メリット OAuth1.0 OAuth2.0 まとめ OAuth とは ひとまず、一番分かりやすい OAuth…]]></description><link>https://uh-zz.github.io/blog/2021/01/about-oauth/</link><guid isPermaLink="false">https://uh-zz.github.io/blog/2021/01/about-oauth/</guid><pubDate>Tue, 05 Jan 2021 08:12:03 GMT</pubDate><content:encoded>&lt;p&gt;バックエンドエンジニアの&lt;a href=&quot;https://github.com/kamranahmedse/developer-roadmap#back-end-roadmap&quot;&gt;ロードマップ&lt;/a&gt;に沿ってエンジニアとしての自己肯定感を養うシリーズです。&lt;/p&gt;
+&lt;h3&gt;目次&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#OAuth%E3%81%A8%E3%81%AF&quot;&gt;OAuth とは&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E3%83%A1%E3%83%AA%E3%83%83%E3%83%88&quot;&gt;メリット&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#OAuth1.0&quot;&gt;OAuth1.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#OAuth2.0&quot;&gt;OAuth2.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E3%81%BE%E3%81%A8%E3%82%81&quot;&gt;まとめ&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;OAuth とは&lt;/h2&gt;
+&lt;p&gt;ひとまず、&lt;a href=&quot;https://qiita.com/TakahikoKawasaki/items/e37caf50776e00e733be&quot;&gt;一番分かりやすい OAuth の説明&lt;/a&gt;で大体の感覚がつかめますのでオススメです。&lt;/p&gt;
+&lt;p&gt;こちらでもざっくり説明させてもらうと、OAuth は複数のアプリを連携させるための仕組みです。&lt;/p&gt;
+&lt;p&gt;例えば、ブログの記事を更新した瞬間に、ブログから更新情報をツイートしたかったりする場合に使われます。&lt;/p&gt;
+&lt;p&gt;ただ、そのままツイートできるわけではなくて、ブログアプリがツイートする許可(認可)をしてあげる必要があります。&lt;/p&gt;
+&lt;p&gt;そして許可されたアプリは許可証(アクセストークン)を持っていることで、Twitter を使ってツイートできるという仕組みです。&lt;/p&gt;
+&lt;h3&gt;メリット&lt;/h3&gt;
+&lt;p&gt;OAuth を使うことで、上の例であげたブログアプリは、Twitter のユーザ名とパスワードを知らなくてもツイートできるという点です。&lt;/p&gt;
+&lt;p&gt;巷のアプリはこれを使うことで、Google アカウントや Twitter など SNS アカウントを持っているだけでユーザ登録できちゃいます。最初の煩わしい登録の手間が省けて良いです。&lt;/p&gt;
+&lt;h2&gt;OAuth1.0&lt;/h2&gt;
+&lt;p&gt;OAuth の初期バージョンです。他に 1.0a という名前のバージョンもありますが、Twitter では 1.0a を使うことができるみたいです。(後述の 2.0 も同様に使用可)&lt;/p&gt;
+&lt;p&gt;特徴としては、認証と署名を用いて実現される仕様でありますが、実装が複雑で使用する言語が限られてしまうというデメリット?があるみたいです。(堅牢ではあると思いますが)&lt;/p&gt;
+&lt;p&gt;また、1.0 は Web アプリのみ対応しているので、デスクトップ/モバイルアプリは蚊帳の外とこれまた制限されるみたいです。&lt;/p&gt;
+&lt;p&gt;(Twitter は Web アプリ以外でも使える xAuth という OAuth 拡張を開発したりしてたみたいです)&lt;/p&gt;
+&lt;p&gt;さらに悲しいことに、1.0 の仕様は次の 2.0 の策定を持って廃止されたみたいです。&lt;/p&gt;
+&lt;h2&gt;OAuth2.0&lt;/h2&gt;
+&lt;p&gt;後継です。複雑と言われていた署名(とトークン交換)をバッサリ省いています。これによって実装しやすいものになりましたがセキュリティが気になるところです。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qiita.com/TakahikoKawasaki/items/3600b28af7b63671b968&quot;&gt;OAuth 1.0 のほうが OAuth 2.0 より安全なの？&lt;/a&gt;でも言われている通り、2.0 はクライアントアプリケーションの幅が広がった分、秘密鍵の隠蔽が難しくなるみたいです。。&lt;/p&gt;
+&lt;p&gt;隠蔽できるかの違いはありますが、セキュリティレベルは両者それほど変わらないみたいです。&lt;/p&gt;
+&lt;p&gt;(2.0 は経路を TLS 化していることで、1.0 よりも提示するパラメータが少なくなっているという事実はあるそうな)&lt;/p&gt;
+&lt;h2&gt;まとめ&lt;/h2&gt;
+&lt;p&gt;実装のことを考えてこれからも 2.0 を使っていきましょうという締めです。(Twitter 以外のほとんどのアプリが 2.0 を採用していることもあり、、)
+この辺の仕様がやはり読んだだけではイメージしづらいところがありますので、簡単に実装してみて実務で使えるようになりたいですという感想です。(RFC のドキュメントも読み慣れると恩恵ありそうです)&lt;/p&gt;</content:encoded></item><item><title><![CDATA[システム設計-part3-]]></title><description><![CDATA[…]]></description><link>https://uh-zz.github.io/blog/2020/12/systems-architecture-part-3/</link><guid isPermaLink="false">https://uh-zz.github.io/blog/2020/12/systems-architecture-part-3/</guid><pubDate>Sat, 05 Dec 2020 08:12:03 GMT</pubDate><content:encoded>&lt;p&gt;バックエンドエンジニアの&lt;a href=&quot;https://github.com/kamranahmedse/developer-roadmap#back-end-roadmap&quot;&gt;ロードマップ&lt;/a&gt;に沿ってエンジニアとしての自己肯定感を養うシリーズです。&lt;/p&gt;
+&lt;p&gt;※&lt;a href=&quot;https://www.amazon.co.jp/%E7%8F%BE%E5%A0%B4%E3%81%A7%E5%BD%B9%E7%AB%8B%E3%81%A4%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E8%A8%AD%E8%A8%88%E3%81%AE%E5%8E%9F%E5%89%87-%E5%A4%89%E6%9B%B4%E3%82%92%E6%A5%BD%E3%81%A7%E5%AE%89%E5%85%A8%E3%81%AB%E3%81%99%E3%82%8B%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E6%8C%87%E5%90%91%E3%81%AE%E5%AE%9F%E8%B7%B5%E6%8A%80%E6%B3%95-%E5%A2%97%E7%94%B0-%E4%BA%A8/dp/477419087X&quot;&gt;現場で役立つシステム設計の原則&lt;/a&gt;を元に記事を作成しています。&lt;/p&gt;
+&lt;h3&gt;目次&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#%E6%A5%AD%E5%8B%99%E3%83%AD%E3%82%B8%E3%83%83%E3%82%AF&quot;&gt;業務ロジック&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89%E3%82%92%E3%83%AD%E3%82%B8%E3%83%83%E3%82%AF%E3%81%AE%E7%BD%AE%E3%81%8D%E5%A0%B4%E6%89%80%E3%81%AB%E3%81%99%E3%82%8B&quot;&gt;メソッドをロジックの置き場所にする&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E5%A4%9A%E6%85%8B&quot;&gt;多態&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E5%88%97%E6%8C%99%E5%9E%8B&quot;&gt;列挙型&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;業務ロジック&lt;/h2&gt;
+&lt;h3&gt;メソッドをロジックの置き場所にする&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.amazon.co.jp/%E7%8F%BE%E5%A0%B4%E3%81%A7%E5%BD%B9%E7%AB%8B%E3%81%A4%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E8%A8%AD%E8%A8%88%E3%81%AE%E5%8E%9F%E5%89%87-%E5%A4%89%E6%9B%B4%E3%82%92%E6%A5%BD%E3%81%A7%E5%AE%89%E5%85%A8%E3%81%AB%E3%81%99%E3%82%8B%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E6%8C%87%E5%90%91%E3%81%AE%E5%AE%9F%E8%B7%B5%E6%8A%80%E6%B3%95-%E5%A2%97%E7%94%B0-%E4%BA%A8/dp/477419087X&quot;&gt;現場で役立つシステム設計の原則&lt;/a&gt;では、“従来”という表現をされていますが、手続き型と呼ばれている設計ではデータクラスと機能クラスに分けて表現します。&lt;/p&gt;
+&lt;p&gt;その名の通りデータクラスはデータを格納して、機能クラスはデータクラスのデータを判断、加工、計算するといった使い方です。&lt;/p&gt;
+&lt;p&gt;この手続き型の問題は、拡張するときの変更箇所の特定に時間がかかるということです。&lt;/p&gt;
+&lt;p&gt;なぜかというと、データクラスが参照できるクラスであれば、アーキテクチャのどのレイヤーにでもロジックが書けてしまうからです。&lt;/p&gt;
+&lt;p&gt;便利のようには見えますが、先に言った変更箇所の特定に時間がかかるこの方法は最善ではありません。&lt;/p&gt;
+&lt;p&gt;解決としては、Java 本来のクラスの使い方を踏襲することです。&lt;/p&gt;
+&lt;p&gt;データとロジックを１つのクラスに閉じてしまおうという考え方です。&lt;/p&gt;
+&lt;p&gt;{% highlight java %}
+class PersonName {&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;private String firstName;
+
+private String lastName;
+
+String fullName() {
+	return String.format(&amp;quot;%s %s&amp;quot;, firstName, lastName);
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;}
+{% endhighlight %}&lt;/p&gt;
+&lt;p&gt;データである&lt;code class=&quot;language-text&quot;&gt;firstName&lt;/code&gt;と&lt;code class=&quot;language-text&quot;&gt;lastName&lt;/code&gt;、そしてロジック(メソッド)の&lt;code class=&quot;language-text&quot;&gt;fullName()&lt;/code&gt;が同じクラス内にあります。&lt;/p&gt;
+&lt;p&gt;こうするとクラス内でデータを扱うことができて変更もこのクラス内で閉じることができます。&lt;/p&gt;
+&lt;p&gt;また、メソッドはクラス内のインスタンス変数(&lt;code class=&quot;language-text&quot;&gt;firstName&lt;/code&gt;や&lt;code class=&quot;language-text&quot;&gt;lastName&lt;/code&gt;)を使って何らかの処理を行う用途で作成します。&lt;/p&gt;
+&lt;h3&gt;クラスが肥大化したら小さく分ける&lt;/h3&gt;
+&lt;p&gt;これもやってしまいがちですが、改修を繰り返していくうちに、クラスが大きくなっていきます。&lt;/p&gt;
+&lt;p&gt;大きくなったクラスは手続き型同様に変更箇所の特定に時間がかかります。&lt;/p&gt;
+&lt;p&gt;それを防ぐために、大きくなってしまったクラスを次のルールで細分化します。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;インスタンス変数とメソッドを対応付ける&lt;/li&gt;
+&lt;li&gt;メソッドが全てのインスタンス変数を使うようになる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;細分化したクラスはそれぞれ独立性が高くなるので、別のクラスで使う時にも再利用ができるようになります。&lt;/p&gt;
+&lt;p&gt;こうした関連の強いデータとロジックをまとめたクラスを&lt;strong&gt;凝集度が高い&lt;/strong&gt;と言います。&lt;/p&gt;
+&lt;p&gt;凝集度が高いクラスは、変更箇所もそのクラスに閉じることになるので、疎結合になり他への影響が少なくて済みます。&lt;/p&gt;
+&lt;h3&gt;ここまでのまとめ&lt;/h3&gt;
+&lt;p&gt;時すでに遅しと言いますか、現場での反省点をつらつら振り返ってベストプラクティスを学んでいるという感じです。&lt;/p&gt;
+&lt;p&gt;次回に活かそうというモチベーションは上がるのでいい復習方法だと感じます。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[システム設計-part2-]]></title><description><![CDATA[…]]></description><link>https://uh-zz.github.io/blog/2020/12/systems-architecture-part-2/</link><guid isPermaLink="false">https://uh-zz.github.io/blog/2020/12/systems-architecture-part-2/</guid><pubDate>Sat, 05 Dec 2020 08:12:03 GMT</pubDate><content:encoded>&lt;p&gt;バックエンドエンジニアの&lt;a href=&quot;https://github.com/kamranahmedse/developer-roadmap#back-end-roadmap&quot;&gt;ロードマップ&lt;/a&gt;に沿ってエンジニアとしての自己肯定感を養うシリーズです。&lt;/p&gt;
+&lt;p&gt;※&lt;a href=&quot;https://www.amazon.co.jp/%E7%8F%BE%E5%A0%B4%E3%81%A7%E5%BD%B9%E7%AB%8B%E3%81%A4%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E8%A8%AD%E8%A8%88%E3%81%AE%E5%8E%9F%E5%89%87-%E5%A4%89%E6%9B%B4%E3%82%92%E6%A5%BD%E3%81%A7%E5%AE%89%E5%85%A8%E3%81%AB%E3%81%99%E3%82%8B%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E6%8C%87%E5%90%91%E3%81%AE%E5%AE%9F%E8%B7%B5%E6%8A%80%E6%B3%95-%E5%A2%97%E7%94%B0-%E4%BA%A8/dp/477419087X&quot;&gt;現場で役立つシステム設計の原則&lt;/a&gt;を元に記事を作成しています。&lt;/p&gt;
+&lt;h3&gt;目次&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#%E8%A8%AD%E8%A8%88%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3&quot;&gt;設計パターン&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E6%97%A9%E6%9C%9F%E3%83%AA%E3%82%BF%E3%83%BC%E3%83%B3&quot;&gt;早期リターン&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E5%A4%9A%E6%85%8B&quot;&gt;多態&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E5%88%97%E6%8C%99%E5%9E%8B&quot;&gt;列挙型&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;設計パターン&lt;/h2&gt;
+&lt;h3&gt;早期リターン&lt;/h3&gt;
+&lt;p&gt;複雑になりがちな場合分けのロジックの見通しを良くしようというものです。&lt;/p&gt;
+&lt;p&gt;ありがちな if-else をつなげた(例 1)↓&lt;/p&gt;
+&lt;p&gt;{% highlight java %}
+Yen fee() {
+Yen result;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;if (isChild()) {
+	result = chidFee();
+} else if (isSenior()) {
+	result = seniorFee();
+} else {
+	result = adultFee();
+}
+return result;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;}
+{% endhighlight %}&lt;/p&gt;
+&lt;p&gt;さっきのコードからローカル変数を抜いて結果をすぐに return するようにした(例 2)↓&lt;/p&gt;
+&lt;p&gt;{% highlight java %}
+Yen fee() {&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;if (isChild()) {
+	return chidFee();
+} else if (isSenior()) {
+	return seniorFee();
+} else {
+	return adultFee();
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;}
+{% endhighlight %}&lt;/p&gt;
+&lt;p&gt;このように、値が決まるとすぐに return するやり方を&lt;strong&gt;早期リターン&lt;/strong&gt;と言います。&lt;/p&gt;
+&lt;h4&gt;&lt;u&gt;ガード節&lt;/u&gt;&lt;/h4&gt;
+&lt;p&gt;上記の例 2 から else を抜いた(例 3)↓&lt;/p&gt;
+&lt;p&gt;{% highlight java %}
+Yen fee() {&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;if (isChild()) return chidFee();
+if (isSenior()) return seniorFee();
+
+return adultFee();&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;}
+{% endhighlight %}&lt;/p&gt;
+&lt;p&gt;else を抜いた早期リターンを&lt;strong&gt;ガード節&lt;/strong&gt;と言います。非常にコンパクトですね。&lt;/p&gt;
+&lt;p&gt;単文の並びに変えることで、独立性が高くなります。また、単文同士が結合していない（疎結合)ので追加が容易です。&lt;/p&gt;
+&lt;h3&gt;多態&lt;/h3&gt;
+&lt;p&gt;それぞれのクラスを包括するようなクラス(インターフェース)を作ることで、使う側のクラス、メソッドはインターフェースさえ実装していれば、それがどのクラスでも気にする必要がありません。&lt;/p&gt;
+&lt;p&gt;インターフェースを用意する(例 4)↓&lt;/p&gt;
+&lt;p&gt;{% highlight java %}
+interface Fee {
+Yen yen();
+String label();
+}&lt;/p&gt;
+&lt;p&gt;// 大人クラス
+class AdultFee implements Fee {
+Yen yen() {
+return new Yen(1000);
+}&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;String label() {
+	return &amp;quot;大人&amp;quot;;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;}&lt;/p&gt;
+&lt;p&gt;// 子クラス
+class ChildFee implements Fee {
+Yen yen() {
+return new Yen(50)
+}
+String label() {
+return “子供”;
+}
+}
+{% endhighlight %}&lt;/p&gt;
+&lt;p&gt;使う側(例 5)↓&lt;/p&gt;
+&lt;p&gt;{% highlight java %}
+class Reservation {
+List&lt;Fee&gt; fees; // 大人と子供のリスト&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Reservation() {
+	fees = new ArrayList&amp;lt;Fee&amp;gt;();
+}
+
+// Feeはインターフェースなので、大人と子供の両方に使える
+void addFee(Fee fee) {
+	fees.add(fee);
+}
+
+// 大人と子供の合計料金
+Yen feeTotal() {
+	Yen total = new Yen();
+
+	for (Fee fee : fees) {
+		total.add(fee.yen());
+	}
+	reuturn total;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;}
+{% endhighlight %}&lt;/p&gt;
+&lt;p&gt;インターフェースを使うことで、大人と子供の料金クラスをまとめて処理できました。&lt;/p&gt;
+&lt;p&gt;if 文を使わずに済むと見通しがよいですね。&lt;/p&gt;
+&lt;p&gt;このようにインターフェースを使用して、異なるクラスのオブジェクトを同じ型として扱う仕組みを&lt;strong&gt;多態&lt;/strong&gt;と言います。&lt;/p&gt;
+&lt;p&gt;多態にすることで、Fee のインターフェースを実装した別のクラス(シニアクラスなど)を追加しても Reservation クラスを変更することはありません。改修箇所が少なくなるのは大きなメリットです。&lt;/p&gt;
+&lt;h3&gt;列挙型&lt;/h3&gt;
+&lt;p&gt;多態は同じインターフェースを実装したクラスの一覧が分かりにくくなる場合があります。class 宣言の implements を見れば一目瞭然ですが、一つ一つ見ていくのに時間がかかります。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;列挙型&lt;/strong&gt;を使うことで区分(インターフェースのグループ)の一覧を作成することができます。&lt;/p&gt;
+&lt;p&gt;列挙型を使って料金区分ごとのロジックを表現(例 6)↓&lt;/p&gt;
+&lt;p&gt;{% highlight java %}
+enum FeeType {
+adult(new AdultFee());
+child(new ChidFee());
+senior(new SeniorFee());&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;private Fee fee;
+
+private FeeTypt(Fee fee) {
+	this.fee = fee;
+}
+
+Yen yen() {
+	return fee.yen();
+}
+
+String label() {
+	return fee.label();
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;}
+{% endhighlight %}&lt;/p&gt;
+&lt;p&gt;使う側(例 7)↓&lt;/p&gt;
+&lt;p&gt;{% highlight java %}
+Yen feeFor(Stirng feeTypeName) {
+FeeType feeType = FeeType.valueOf(feeTypeName)&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;return feeType.yen();&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;}
+{% endhighlight %}&lt;/p&gt;
+&lt;p&gt;enum クラスの valueOf()メソッドは、Map の get()メソッドと同様に、if 文を使うことなく料金区分ごとのオブジェクトを取得できます。このような振る舞いを持った列挙型(enum)を&lt;strong&gt;区分オブジェクト&lt;/strong&gt;と言います。&lt;/p&gt;
+&lt;h3&gt;ここまでのまとめ&lt;/h3&gt;
+&lt;p&gt;前回同様、コードをスッキリさせる手法を見てきました。インターフェースを使うことで抽象的なメソッドを作ったり、列挙型を使って if 文をなるべく減らせることはコードの保守性、拡張性を高めてくれますね。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[システム設計-part1-]]></title><description><![CDATA[バックエンドエンジニアのロードマップに沿ってエンジニアとしての自己肯定感を養うシリーズです。 ※現場で役立つシステム設計の原則を元に記事を作成しています。 目次 設計パターン 値オブジェクト コレクションオブジェクト 設計パターン 値オブジェクト(Value Object…]]></description><link>https://uh-zz.github.io/blog/2020/12/systems-architecture-part-1/</link><guid isPermaLink="false">https://uh-zz.github.io/blog/2020/12/systems-architecture-part-1/</guid><pubDate>Sat, 05 Dec 2020 08:12:03 GMT</pubDate><content:encoded>&lt;p&gt;バックエンドエンジニアの&lt;a href=&quot;https://github.com/kamranahmedse/developer-roadmap#back-end-roadmap&quot;&gt;ロードマップ&lt;/a&gt;に沿ってエンジニアとしての自己肯定感を養うシリーズです。&lt;/p&gt;
+&lt;p&gt;※&lt;a href=&quot;https://www.amazon.co.jp/%E7%8F%BE%E5%A0%B4%E3%81%A7%E5%BD%B9%E7%AB%8B%E3%81%A4%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E8%A8%AD%E8%A8%88%E3%81%AE%E5%8E%9F%E5%89%87-%E5%A4%89%E6%9B%B4%E3%82%92%E6%A5%BD%E3%81%A7%E5%AE%89%E5%85%A8%E3%81%AB%E3%81%99%E3%82%8B%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E6%8C%87%E5%90%91%E3%81%AE%E5%AE%9F%E8%B7%B5%E6%8A%80%E6%B3%95-%E5%A2%97%E7%94%B0-%E4%BA%A8/dp/477419087X&quot;&gt;現場で役立つシステム設計の原則&lt;/a&gt;を元に記事を作成しています。&lt;/p&gt;
+&lt;h3&gt;目次&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#%E8%A8%AD%E8%A8%88%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3&quot;&gt;設計パターン&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E5%80%A4%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88&quot;&gt;値オブジェクト&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88&quot;&gt;コレクションオブジェクト&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;設計パターン&lt;/h2&gt;
+&lt;h3&gt;値オブジェクト(Value Object)&lt;/h3&gt;
+&lt;p&gt;Java で変数を扱うとき、int や String などで型定義しがちな初心者丸出しの実装をしていた私ですが、値オブジェクトを知ったとき眼からウロコでした。&lt;/p&gt;
+&lt;p&gt;値オブジェクトとは、汎用的な型(int や String)で型を定義するのではなく、&lt;strong&gt;専用の&lt;/strong&gt;型(クラスやインターフェース)を定義します。&lt;/p&gt;
+&lt;p&gt;範囲の広い汎用的な型を使うのではなく、業務に合わせた値で制限するというものです。&lt;/p&gt;
+&lt;p&gt;値オブジェクトクラスはこんな感じ ↓&lt;/p&gt;
+&lt;p&gt;{% highlight java %}
+class Quantity {&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;static final int MIN = 1;
+static final int MAX = 100;
+
+int value;
+
+Quantity(int value) {
+
+	if (value &amp;lt; MIN) {
+		throw new IllegalArgumentException(&amp;quot;不正&amp;quot; + MIN + &amp;quot;未満&amp;quot;);
+	}
+
+	if (value &amp;gt; MAX) {
+		throw new IllegalArgumentException(&amp;quot;不正&amp;quot; + MAX + &amp;quot;超&amp;quot;);
+	}
+
+	this.value = value;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;}
+{% endhighlight %}&lt;/p&gt;
+&lt;p&gt;参照側 ↓&lt;/p&gt;
+&lt;p&gt;{% highlight java %}
+Quantity quantity = new Quantity(50);
+{% endhighlight %}&lt;/p&gt;
+&lt;p&gt;こうすることで Quantity 型は値の制限(0~100)付きの実装ができるので安全です。制限を超えた値は不正と見なせるので業務ルールから外れることもありません。&lt;/p&gt;
+&lt;h4&gt;&lt;u&gt;値オブジェクトは不変！！&lt;/u&gt;&lt;/h4&gt;
+&lt;p&gt;変数の上書きは禁止しておきましょう。もし上書きしそうであれば、新しいオブジェクトを作成しましょう。オブジェクトは常に１つの値を持つように実装します。&lt;/p&gt;
+&lt;p&gt;このように不変なオブジェクトを設計する方法を&lt;strong&gt;完全コンストラクタ&lt;/strong&gt;と言います。&lt;/p&gt;
+&lt;p&gt;今回の Quantity 型のような値オブジェクトのようにクラス名も業務で実際に使用している用語にするべきです。&lt;/p&gt;
+&lt;p&gt;そうすることで業務の理解とプログラムの設計を関連付ける手助けになり、変更のしやすいコードを維持することができます。&lt;/p&gt;
+&lt;h2&gt;コレクションオブジェクト&lt;/h2&gt;
+&lt;p&gt;値オブジェクトは単一の型(int や String)のデータとそれに関連するロジックを１つのクラスにまとめるというコンセプトです。&lt;/p&gt;
+&lt;p&gt;コレクションオブジェクトも同様に、List/Set/Map といったコレクション型のデータとロジックを１つのクラスに閉じ込めようといったものです。&lt;/p&gt;
+&lt;p&gt;※オブジェクト指向ではデータとロジックを閉じ込めるというところがミソといっても過言ではないでしょう。&lt;/p&gt;
+&lt;p&gt;クラスはこんな感じ ↓
+{% highlight java %}
+class Customers {
+List&lt;Customer&gt; cutomers;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;void add(Customer customer) {...}
+void removeIfExist(Customer customer) {...}
+
+int count() {...}
+
+Customers importantCustomers() {...}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;}
+{% endhighlight %}&lt;/p&gt;
+&lt;p&gt;Customer に関するロジックを寄せ集めたような感じです。こうすることで変更箇所のこのクラスだけに閉じ込めることができます。(楽ちん)&lt;/p&gt;
+&lt;p&gt;使う側は Customer に関するメソッドを呼ぶだけでよくなるので、使う側のソースもスッキリするという
+みんなハッピーになれるというわけです。&lt;/p&gt;
+&lt;h4&gt;&lt;u&gt;コレクションオブジェクトの参照をそのまま渡すべからず&lt;/u&gt;&lt;/h4&gt;
+&lt;p&gt;値オブジェクト同様、「不変」であることが求められます。もしも getList()が欲しくなる禁断症状があった時に有効な方法は、&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;同じ型のコレクションオブジェクトを返す&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;{% highlight java %}
+class Customers {
+List&lt;Customer&gt; customers;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Customers add(Customer customer) {
+	List&amp;lt;Customer&amp;gt; result = new ArrayList&amp;lt;&amp;gt;(customers);
+	return new Customers(result.add(customer));
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;}
+{% endhighlight %}&lt;/p&gt;
+&lt;p&gt;こうすることで、既存の customers を渡すことなく新しいオブジェクトを生成して返します。または、&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;変更不可にして返す&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;{% highlight java %}
+class Customers {
+List&lt;Customer&gt; customers;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;List&amp;lt;Customer&amp;gt; asList() {
+	return Collections.unmodifiableList(customers);
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;}
+{% endhighlight %}&lt;/p&gt;
+&lt;p&gt;意地で不変なオブジェクトを返すようにします。そうすることで変更による副作用の起きにくいプログラムを作ることに繋がります。&lt;/p&gt;
+&lt;h3&gt;ここまでのまとめ&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;値オブジェクトもコレクションオブジェクトもどちらも「不変であれ」ということです。同じインスタンスを使い回そうとすればするほど、変更によるバグが出る可能性が高くなります。&lt;/li&gt;
+&lt;li&gt;データとロジックは１つのクラスに閉じこめましょう。ロジックをまとめておくことで、使う側はメソッドを呼ぶだけで済むし、変更する場合はそのクラスだけを対象にすればよいわけです。人類の英知ですね。&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[スレッドと並行処理]]></title><description><![CDATA[…]]></description><link>https://uh-zz.github.io/blog/2020/11/thread-and-concurrency/</link><guid isPermaLink="false">https://uh-zz.github.io/blog/2020/11/thread-and-concurrency/</guid><pubDate>Thu, 05 Nov 2020 08:12:03 GMT</pubDate><content:encoded>&lt;p&gt;バックエンドエンジニアの&lt;a href=&quot;https://github.com/kamranahmedse/developer-roadmap#back-end-roadmap&quot;&gt;ロードマップ&lt;/a&gt;に沿ってエンジニアとしての自己肯定感を養うシリーズです。&lt;/p&gt;
+&lt;h3&gt;目次&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#%E3%82%B9%E3%83%AC%E3%83%83%E3%83%89&quot;&gt;スレッド&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E4%B8%A6%E8%A1%8C%E5%87%A6%E7%90%86&quot;&gt;並行処理&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E3%83%AF%E3%83%BC%E3%82%AB%E3%83%BC%E3%83%97%E3%83%BC%E3%83%AB&quot;&gt;ワーカープール&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;スレッド&lt;/h2&gt;
+&lt;p&gt;プロセスが最低１つは持っている実行単位のことです。
+こんな言い方をするのは、プロセスが複数のスレッドを管理できるからです。&lt;/p&gt;
+&lt;p&gt;実行単位という視点でプロセスとの違いは、「アドレス空間」を共有できるという点です。&lt;/p&gt;
+&lt;p&gt;尾を引くように&lt;a href=&quot;https://uh-zz.github.io/blog/posts/about-process/&quot;&gt;プロセス管理&lt;/a&gt;の話に繋がりますが、プロセスにはそれぞれ１つのアドレス空間が割り当てられます。そして別のプロセスからアドレス空間へのアクセスは原則できません。(これを可能にするために共有メモリという方法を使います)&lt;/p&gt;
+&lt;p&gt;それに対して、スレッドは１つのプロセスの実行単位を分けたものですから、同じアドレス空間を共有できるというわけです。そういうわけで、スレッドとプロセスをそれぞれ複数起動する場合は、スレッドの方がアドレス空間を１つで済ませることができるため省コストになります。&lt;/p&gt;
+&lt;p&gt;では、複数のスレッドを起動してやることは?というと並行処理です。&lt;/p&gt;
+&lt;br&gt;
+&lt;h2&gt;並行処理&lt;/h2&gt;
+&lt;p&gt;これもすでに出てきている話ではあります。&lt;a href=&quot;https://uh-zz.github.io/blog/posts/about-process/&quot;&gt;プロセス管理&lt;/a&gt;の記事で出した複数アプリを同時に起動させるという部分です。「同時に」というのは私たちユーザがそう解釈しているだけで、アプリは&lt;strong&gt;カーネル&lt;/strong&gt;が割り当てた非常に短い処理時間ごとに切り替えているのでしたよね。これが&lt;strong&gt;並行処理&lt;/strong&gt;です。&lt;/p&gt;
+&lt;p&gt;スレッドでも同じように短い処理時間ごとに切り替えて「同時に」処理させることができます。&lt;/p&gt;
+&lt;h3&gt;並列処理との違い&lt;/h3&gt;
+&lt;p&gt;私自身、再三調べては納得 → 忘れるを繰り返していましたが、&lt;a href=&quot;https://uh-zz.github.io/blog/posts/about-process/&quot;&gt;プロセス管理&lt;/a&gt;(3 度目)をまとめることでやっと理解できたと思います。&lt;/p&gt;
+&lt;p&gt;並行処理では処理時間ごとに切り替えると言いましたが、並列処理では CPU １つは言わず２つで処理してしまえばいいじゃないという考え方です。&lt;/p&gt;
+&lt;p&gt;図で見ると非常にわかりやすいのですが、並行処理だとパン食べてチーズ食べてハム食べてレタス食べて、、を繰り返して食べ切る作戦なのに対して、並列処理はミックスサンドとして食べ切るようなイメージです。(誰かに披露したことない例えですが我ながらよいと思ってる)&lt;/p&gt;
+&lt;p&gt;そんなの絶対ミックスサンドとして処理したら無限じゃんと思われますが、並列処理にも上限があるようです。&lt;/p&gt;
+&lt;p&gt;アムダールの法則といって複数のプロセッサ(CPU のことですね)を使って並列化による高速化を行う場合、そのプログラムの中で逐次的に実行される処理部分(並列)の時間によって、高速化が制限されるというものです。
+出典：&lt;a href=&quot;https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%A0%E3%83%80%E3%83%BC%E3%83%AB%E3%81%AE%E6%B3%95%E5%89%87&quot;&gt;wikipedia「アムダールの法則」より引用&lt;/a&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;まあ、上限があるといっても高速するのに変わりはないわけです。&lt;/p&gt;
+&lt;p&gt;今回はその中でも比較的面白い実装を見つけたのでそれを紹介します。&lt;/p&gt;
+&lt;h2&gt;ワーカープール&lt;/h2&gt;
+&lt;p&gt;スレッドプールとも呼ばれるものです。並行処理でたくさんのスレッドを起動して、、というのももちろん可能ですが、それには代償が伴います。ワーカープールはそのようにいくつもスレッドを起動させるのではなく、すでに起動したスレッドを使い回そうの精神で実装される並行処理です。&lt;/p&gt;
+&lt;p&gt;以下のような実装です。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://oohira.github.io/gobyexample-jp/worker-pools.html&quot;&gt;こちら&lt;/a&gt;を参考にさせていただきました。(ほぼコメントつけただけですが)&lt;/p&gt;
+&lt;p&gt;{% highlight go %}
+package main&lt;/p&gt;
+&lt;p&gt;import (
+“fmt”
+“time”
+)&lt;/p&gt;
+&lt;p&gt;// 使い回し用のワーカー
+func worker(id int, jobs &amp;#x3C;-chan int, results chan&amp;#x3C;- int) {
+for j := range jobs {&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;    fmt.Println(&amp;quot;worker&amp;quot;, id, &amp;quot;started  job&amp;quot;, j)
+
+    time.Sleep(time.Second) // 1秒待ち(重い処理を想定)
+
+    fmt.Println(&amp;quot;worker&amp;quot;, id, &amp;quot;finished job&amp;quot;, j)
+
+    results &amp;lt;- j * 2
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;}&lt;/p&gt;
+&lt;p&gt;func main() {&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// タスクの数
+const numJobs = 5
+
+// こなさなければいけないタスク
+jobs := make(chan int, numJobs)
+
+// タスクの成果物
+results := make(chan int, numJobs)
+
+for w := 1; w &amp;lt;= 3; w++ {
+	// 使い回し用のワーカーだけ生成しておく(この状態ではまだタスクをもらってないのでブロック)
+    go worker(w, jobs, results)
+}
+
+// タスク数だけjobsに渡す
+for j := 1; j &amp;lt;= numJobs; j++ {
+	// チャネルへの書き込みを契機にワーカー起動
+    jobs &amp;lt;- j
+}
+
+// タスク数だけ格納されたらチャネルを閉じる
+close(jobs)
+
+
+for a := 1; a &amp;lt;= numJobs; a++ {
+    &amp;lt;-results
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;}&lt;/p&gt;
+&lt;p&gt;{% endhighlight %}&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// 結果
+worker 3 started  job 1
+worker 1 started  job 2
+worker 2 started  job 3
+worker 3 finished job 1
+worker 3 started  job 4
+worker 1 finished job 2
+worker 1 started  job 5
+worker 2 finished job 3
+worker 1 finished job 5
+worker 3 finished job 4&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;実行するとわかりますが、順番がごっちゃになって処理されているのがわかります。&lt;/p&gt;
+&lt;p&gt;これにより、ワーカーというスレッドごとに並行処理されているという動作を確認することができました。&lt;/p&gt;
+&lt;h3&gt;余談&lt;/h3&gt;
+&lt;p&gt;他にも面白そうな実装をいくつか見つけましたが、ただ羅列するだけでは萎えると思ったので気が向いたら別で紹介したいと思います。&lt;/p&gt;
+&lt;p&gt;なにげに goroutine を使用していますが、goroutine の中身の処理内容(work stealing アルゴリズム)も面白いので、後々まとめたいと思ってます。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[メモリ管理]]></title><description><![CDATA[バックエンドエンジニアのロードマップに沿ってエンジニアとしての自己肯定感を養うシリーズです。 目次 仮想メモリ ページング メモリマップトファイル 共有メモリ メモリ管理 API…]]></description><link>https://uh-zz.github.io/blog/2020/10/memory-management/</link><guid isPermaLink="false">https://uh-zz.github.io/blog/2020/10/memory-management/</guid><pubDate>Mon, 05 Oct 2020 08:12:03 GMT</pubDate><content:encoded>&lt;p&gt;バックエンドエンジニアの&lt;a href=&quot;https://github.com/kamranahmedse/developer-roadmap#back-end-roadmap&quot;&gt;ロードマップ&lt;/a&gt;に沿ってエンジニアとしての自己肯定感を養うシリーズです。&lt;/p&gt;
+&lt;h3&gt;目次&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#%E4%BB%AE%E6%83%B3%E3%83%A1%E3%83%A2%E3%83%AA&quot;&gt;仮想メモリ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E3%83%9A%E3%83%BC%E3%82%B8%E3%83%B3%E3%82%B0&quot;&gt;ページング&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E3%83%A1%E3%83%A2%E3%83%AA%E3%83%9E%E3%83%83%E3%83%97%E3%83%88%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB&quot;&gt;メモリマップトファイル&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E5%85%B1%E6%9C%89%E3%83%A1%E3%83%A2%E3%83%AA&quot;&gt;共有メモリ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E3%83%A1%E3%83%A2%E3%83%AA%E7%AE%A1%E7%90%86API&quot;&gt;メモリ管理 API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E5%8F%82%E8%80%83&quot;&gt;参考&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;仮想メモリ&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://uh-zz.github.io/blog/posts/about-process/&quot;&gt;プロセス管理&lt;/a&gt;でもあったように、メモリはアドレス空間ごとにプロセスを管理します。
+アドレス空間は 4KB/8KB 単位の&lt;strong&gt;ページ&lt;/strong&gt;に分割して管理されています。
+ページはそれぞれ論理アドレス、物理アドレスを対応づける単位でもあります。
+論理アドレスと物理アドレスは常に紐づけられているわけではなく、そのページが必要になった時点で割り当てることも可能です。
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;そのため、論理アドレスを実際の物理アドレスの容量より大きく確保することができます。
+(実際に使えるメモリの量よりも大きなメモリを想定できるということです。)&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;仮装メモリとして使う仕組みには次の３つが挙げられます。
+&lt;br&gt;&lt;/p&gt;
+&lt;h3&gt;ページング&lt;/h3&gt;
+&lt;p&gt;仮想メモリといえばこれ、という風に教えられるものの筆頭かと思います。
+ハードディスクを物理メモリの代わりに使うといったものです。
+物理メモリが不足すると、OS のコアである&lt;strong&gt;カーネル&lt;/strong&gt;は使われていないページをハードディスクに移して論理アドレスを解放します。
+そしてプロセスがハードディスクに移されたページにアクセスしようとすると、カーネルがプロセスを停止し、ハードディスクのページを再度物理メモリに読み込み、論理アドレスを対応づけます。
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;また、プロセス全体を単位にする場合は&lt;strong&gt;スワッピング&lt;/strong&gt;と呼ばれます。&lt;/p&gt;
+&lt;br&gt;
+&lt;h3&gt;メモリマップトファイル&lt;/h3&gt;
+&lt;p&gt;ファイルをメモリとしてアクセスすることができるものです。
+アクセスがあった瞬間に、カーネルがファイルをメモリに読み込みます。プロセスがメモリを使い終わると、論理アドレスと物理アドレスを解放して、メモリの内容をファイルに保存します。&lt;/p&gt;
+&lt;br&gt;
+&lt;h3&gt;共有メモリ&lt;/h3&gt;
+&lt;p&gt;１つの物理アドレスを、複数のプロセスの論理アドレスに対応づけるものです。
+アドレス空間をまたぐと危険では？！という見方もありますが、複数プロセスで処理できるため、巨大な画像データを編集するときには都合が良いみたいです。&lt;/p&gt;
+&lt;p&gt;※Go では共有メモリを使わずに Message Passing を使っています。(後日また記事を書きたいと思います。)&lt;/p&gt;
+&lt;br&gt;
+&lt;h2&gt;メモリ管理 API&lt;/h2&gt;
+&lt;h3&gt;malloc(3)&lt;/h3&gt;
+&lt;p&gt;メモリを&lt;strong&gt;ヒープ領域&lt;/strong&gt;に割り当てます。プログラム実行時に決まるサイズのメモリはヒープ領域から確保します。&lt;/p&gt;
+&lt;p&gt;ヒープは「何かを積み重ねた山」のことで、その名の通り、プログラムを実行してから決定する量だけメモリを確保しておく領域なので納得です。&lt;/p&gt;
+&lt;p&gt;malloc で確保したメモリは&lt;a href=&quot;#free&quot;&gt;free&lt;/a&gt;で解放しなければいけません。&lt;/p&gt;
+&lt;br&gt;
+&lt;h3&gt;calloc(3)&lt;/h3&gt;
+&lt;p&gt;メモリをヒープ領域に割り当てます。malloc と異なる点は、割り当てたメモリをゼロクリアすることです。
+こちらも malloc 同様、確保したメモリは&lt;a href=&quot;#free&quot;&gt;free&lt;/a&gt;で解放しなければいけません。&lt;/p&gt;
+&lt;br&gt;
+&lt;h3&gt;realloc(3)&lt;/h3&gt;
+&lt;p&gt;malloc で割り当てたメモリのサイズを拡大、縮小します。こちらも確保したメモリは&lt;a href=&quot;#free&quot;&gt;free&lt;/a&gt;で解放しなければいけません。&lt;/p&gt;
+&lt;br&gt;
+&lt;h3&gt;free&lt;/h3&gt;
+&lt;p&gt;割り当てたメモリを開放します。いったん開放したアドレスにはアクセスしてはいけません。
+メモリの開放漏れを防ぐために、malloc で確保したメモリは常に free で開放されるべきです。&lt;/p&gt;
+&lt;br&gt;
+&lt;h3&gt;brk(2)&lt;/h3&gt;
+&lt;p&gt;malloc や realloc が割り当てるためのメモリを探してくるものです。物理アドレスが割り当てられていないページに物理アドレスを対応づけます。&lt;/p&gt;
+&lt;br&gt;
+&lt;h2&gt;参考&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.amazon.co.jp/%E3%81%B5%E3%81%A4%E3%81%86%E3%81%AELinux%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E7%AC%AC2%E7%89%88-Linux%E3%81%AE%E4%BB%95%E7%B5%84%E3%81%BF%E3%81%8B%E3%82%89%E5%AD%A6%E3%81%B9%E3%82%8Bgcc%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%AE%E7%8E%8B%E9%81%93-%E9%9D%92%E6%9C%A8-%E5%B3%B0%E9%83%8E/dp/4797386479&quot;&gt;ふつうの Linux プログラミング 第 2 版 Linux の仕組みから学べる gcc プログラミングの王道&lt;/a&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h3&gt;余談&lt;/h3&gt;
+&lt;p&gt;メモリはエラーでもかなりお世話になる部分なので、次回以降、実際のエラーやプログラミング言語(Go か Java)に絡めた記事を書きたいです。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[プロセス管理]]></title><description><![CDATA[バックエンドエンジニアのロードマップに沿ってエンジニアとしての自己肯定感を養うシリーズです。 目次 プロセスとは アドレス空間 プロセス API デーモンプロセス 参考 プロセスとは プロセスという概念は Linux…]]></description><link>https://uh-zz.github.io/blog/2020/09/about-process/</link><guid isPermaLink="false">https://uh-zz.github.io/blog/2020/09/about-process/</guid><pubDate>Sat, 05 Sep 2020 08:12:03 GMT</pubDate><content:encoded>&lt;p&gt;バックエンドエンジニアの&lt;a href=&quot;https://github.com/kamranahmedse/developer-roadmap#back-end-roadmap&quot;&gt;ロードマップ&lt;/a&gt;に沿ってエンジニアとしての自己肯定感を養うシリーズです。&lt;/p&gt;
+&lt;h3&gt;目次&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#%E3%83%97%E3%83%AD%E3%82%BB%E3%82%B9%E3%81%A8%E3%81%AF&quot;&gt;プロセスとは&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%E7%A9%BA%E9%96%93&quot;&gt;アドレス空間&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E3%83%97%E3%83%AD%E3%82%BB%E3%82%B9API&quot;&gt;プロセス API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E3%83%87%E3%83%BC%E3%83%A2%E3%83%B3%E3%83%97%E3%83%AD%E3%82%BB%E3%82%B9&quot;&gt;デーモンプロセス&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E5%8F%82%E8%80%83&quot;&gt;参考&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;プロセスとは&lt;/h2&gt;
+&lt;p&gt;プロセスという概念は Linux において、ファイルシステム、ストリームに並んで重要な構成要素の１つです。
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;プログラマが作成したソースコードはファイルに保存されます。そしてファイルの保存先はハードディスクです。
+プログラムの実行時、プログラムはハードディスクからメモリへと読み込まれます。
+CPU はメモリに読み込まれたプログラムを順次処理していきます。このとき、メモリに読み込まれて CPU に処理されているプログラムを&lt;strong&gt;プロセス&lt;/strong&gt;といいます。
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;１つのプロセスを処理できるのは１つの CPU のみです。そのため、同じプロセスしか一度に実行できなくなるといったことを避けるために、CPU はプロセスごとに処理時間を決めて次々に切り替えます。
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;普段使っている PC やスマホは Youtube や Line や Twitter など、複数アプリを同時に起動して使用しています。あれは CPU が処理時間を決めて順に処理しているために実現されています。OS のコアである&lt;strong&gt;カーネル&lt;/strong&gt;はプロセスの優先順位を考慮して、各プロセスに処理時間を割り当てます。(この機能を&lt;strong&gt;スケジューラ&lt;/strong&gt;、または&lt;strong&gt;ディスパッチャ&lt;/strong&gt;といいます。)&lt;/p&gt;
+&lt;h2&gt;アドレス空間&lt;/h2&gt;
+&lt;p&gt;プロセス１つに対して、CPU とメモリがそれぞれ１つ必要です。CPU は前述の通り、処理時間を割り当てるのに対し、メモリはプロセスごとに&lt;strong&gt;アドレス空間&lt;/strong&gt;を割り当てます。
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;メモリにプログラムを書き込む際には&lt;strong&gt;アドレス&lt;/strong&gt;が必要です。しかしプロセスには 0 番地から始まるメモリが必要なため、１つのプロセスしか使えなくなってしまいます。そこでプロセスから見えるアドレス(&lt;strong&gt;論理アドレス&lt;/strong&gt;)と実際のアドレス(&lt;strong&gt;物理アドレス&lt;/strong&gt;)を分けてしまいます。
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;こうすることで、カーネルと CPU によって論理アドレス → 物理アドレスと変換された実際のアドレスに対して書き込むことができます。
+１つのプロセスの論理アドレス、物理アドレスを全体として&lt;strong&gt;アドレス空間&lt;/strong&gt;といいます。
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;アドレス空間はプロセスごとに割り当てられるので他のプロセスにアクセスできなくなります。&lt;/p&gt;
+&lt;h2&gt;プロセス API&lt;/h2&gt;
+&lt;h3&gt;fork(2)&lt;/h3&gt;
+&lt;p&gt;自分のプロセスを複製して新しいプロセスを作ります。
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Github でも fork がありますが、意味合いは同じです。既存のリポジトリを複製します。複製したリポジトリは自由に更新できますが、fork した元のリポジトリに対しては更新はできません。
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;プロセスの fork は元からあるプロセスを&lt;strong&gt;親プロセス&lt;/strong&gt;、複製されたプロセスを&lt;strong&gt;子プロセス&lt;/strong&gt;と呼びます。
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;子プロセスの fork 実行時の戻り値は 0 です。(戻り値 0 は正常終了のステータスコード)そして親プロセスの fork 実行時の戻り値は子プロセスのプロセス ID です。
+シェルでも&lt;code class=&quot;language-text&quot;&gt;ps aux&lt;/code&gt;コマンドを使用して確認できます。
+&lt;br&gt;&lt;/p&gt;
+&lt;h3&gt;exec&lt;/h3&gt;
+&lt;p&gt;プロセスを新しいプログラムで上書きします。fork したプロセスで即座に exec することで新しいプログラムを時刻したことになります。
+&lt;br&gt;&lt;/p&gt;
+&lt;h3&gt;wait(2)&lt;/h3&gt;
+&lt;p&gt;fork したプロセスの終了を待ちます。&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;以上で、プロセスのライフサイクルは fork で子プロセスを生成し、exec で実行して wait によって、親プロセス側で終了判定するといった流れになります。&lt;/p&gt;
+&lt;h3&gt;pipe(2)&lt;/h3&gt;
+&lt;p&gt;シェルではパイプ「|」を使って複数のコマンドをつなぐことができます。
+言い換えると、パイプはプロセスからプロセスにつながった&lt;strong&gt;ストリーム&lt;/strong&gt;のことです。(&lt;strong&gt;ストリーム&lt;/strong&gt;はバイトの流れ道のイメージ)
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;pipe を実行すると、１つのプロセスでは、自身の書き込み用から読み込み用のファイルディスクリプタへ一方向のストリームが生成されます。
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;また、プロセスを fork するとストリームも複製されます。そこで pipe を実行した後に、fork し親プロセスの読み込み側、子プロセスの書き込み側を close すると、親プロセスの書き込み側 → 子プロセスの読み込み側への１つのストリームが生成されます。これがシェルのパイプの原理です。
+&lt;br&gt;&lt;/p&gt;
+&lt;h2&gt;デーモンプロセス&lt;/h2&gt;
+&lt;p&gt;http サーバや mysql サーバ、いわゆる常駐プロセスと呼ばれるものです。&lt;code class=&quot;language-text&quot;&gt;ps aux&lt;/code&gt;コマンドを実行した際、TTY の項目が?になっているプロセスで、制御端末を持たないプロセスのことを言います。
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;サーバのようにずっと動作し続けるプロセスは、実行したユーザを持たないことで停止されることがなくなります。(プロセスは、起動したユーザがログアウトするとプロセスも停止してしまうからです。)&lt;/p&gt;
+&lt;h2&gt;参考&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.amazon.co.jp/%E3%81%B5%E3%81%A4%E3%81%86%E3%81%AELinux%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E7%AC%AC2%E7%89%88-Linux%E3%81%AE%E4%BB%95%E7%B5%84%E3%81%BF%E3%81%8B%E3%82%89%E5%AD%A6%E3%81%B9%E3%82%8Bgcc%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%AE%E7%8E%8B%E9%81%93-%E9%9D%92%E6%9C%A8-%E5%B3%B0%E9%83%8E/dp/4797386479&quot;&gt;ふつうの Linux プログラミング 第 2 版 Linux の仕組みから学べる gcc プログラミングの王道&lt;/a&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h3&gt;余談&lt;/h3&gt;
+&lt;p&gt;プロセスについての情報がなかなか探せない中、本棚に眠っていた良書を思い出して引っ張り出した甲斐がありました。日々の業務でも触れていますが、 汎用的な知識は重要だと痛切に感じます。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Semantic Versioning]]></title><description><![CDATA[バックエンドエンジニアのロードマップに沿ってエンジニアとしての自己肯定感を養うシリーズです。 セマンティックバージョニング？ アプリに振るバージョン番号をSemVer…]]></description><link>https://uh-zz.github.io/blog/2020/08/semantic-versioning/</link><guid isPermaLink="false">https://uh-zz.github.io/blog/2020/08/semantic-versioning/</guid><pubDate>Mon, 10 Aug 2020 08:12:03 GMT</pubDate><content:encoded>&lt;p&gt;バックエンドエンジニアの&lt;a href=&quot;https://github.com/kamranahmedse/developer-roadmap#back-end-roadmap&quot;&gt;ロードマップ&lt;/a&gt;に沿ってエンジニアとしての自己肯定感を養うシリーズです。&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h2&gt;セマンティックバージョニング？&lt;/h2&gt;
+&lt;p&gt;アプリに振るバージョン番号を&lt;a href=&quot;https://semver.org/lang/ja/&quot;&gt;SemVer&lt;/a&gt;というルールに従って付与しましょうというものです。
+確かにバージョン番号に意味を持たせることで、ユーザからもアプリのバージョン番号が上がればバグ修正なのか機能追加なのかわかりますし、プログラムからも互換性を考慮して処理を分けることができるのでよいですね。&lt;/p&gt;
+&lt;br&gt;
+&lt;h3&gt;これだけ覚えておけば OK&lt;/h3&gt;
+&lt;p&gt;バージョン番号の形式は、&lt;code class=&quot;language-text&quot;&gt;メジャー.マイナー.パッチ&lt;/code&gt;です。(例：&lt;code class=&quot;language-text&quot;&gt;1.0.0&lt;/code&gt;)&lt;/p&gt;
+&lt;h4&gt;メジャー&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;後方互換性がない変更があった時にはこの番号を上げなければいけません(MUST)&lt;/li&gt;
+&lt;li&gt;この番号を上げた際には、マイナー/パッチの番号は 0 にリセットしなければいけません(MUST)&lt;/li&gt;
+&lt;li&gt;この番号が「0」の場合は初期開発用として扱います。リリースの段階でこの番号を「1」に上げます。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;マイナー&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;後方互換性を保ちつつ、機能追加のある時にはこの番号を上げなければいけません(MUST)&lt;/li&gt;
+&lt;li&gt;この番号を上げた際には、パッチの番号は 0 にリセットしなければいけません(MUST)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;パッチ&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;後方互換性を保ちつつ、バグ修正のある時にはこの番号を上げなければいけません(MUST) ※バグ修正とは間違った振る舞いを修正する内部の変更のことをいいます。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;ちょっと踏み込むと&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;プレリリースバージョンには、パッチ番号の後ろにハイフンで区切って識別子をつけることができます。(例：&lt;code class=&quot;language-text&quot;&gt;1.1.0-alpha / 1.1.0-beta / 1.1.0-rc&lt;/code&gt;)
+※ちなみに識別子の&lt;code class=&quot;language-text&quot;&gt;rc&lt;/code&gt;は「release candidate」の略でベータ版よりもさらに製品版に近い品質のバージョンにつけるそうです。（略を初めて知りました。）&lt;/li&gt;
+&lt;li&gt;あと npm の packagge.json でもモジュールをセマンティックバージョンで管理してます。（&lt;code class=&quot;language-text&quot;&gt;~&lt;/code&gt;や&lt;code class=&quot;language-text&quot;&gt;^&lt;/code&gt;が付与されているのをよく見ると思います。）
+これについては&lt;a href=&quot;https://qiita.com/takayukioda/items/cb55d3f433af611295a5&quot;&gt;上、真ん中、下で覚えるバージョニング範囲指定&lt;/a&gt;がわかりやすかったので共有しておきます。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;余談&lt;/h3&gt;
+&lt;p&gt;たかがバージョニング、されどバージョニングといった感じでした。知ってて損はないですよね。
+この辺を知ってて付与できるかどうかが職業エンジニアとの分かれ道かとも思いました。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[アジャイル開発]]></title><description><![CDATA[…]]></description><link>https://uh-zz.github.io/blog/2020/08/agile-software-development/</link><guid isPermaLink="false">https://uh-zz.github.io/blog/2020/08/agile-software-development/</guid><pubDate>Wed, 05 Aug 2020 08:12:03 GMT</pubDate><content:encoded>&lt;p&gt;バックエンドエンジニアの[ロードマップ][ロードマップ]に沿ってエンジニアとしての自己肯定感を養うシリーズです。&lt;/p&gt;
+&lt;h3&gt;目次&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#%E3%82%A2%E3%82%B8%E3%83%A3%E3%82%A4%E3%83%AB%E9%96%8B%E7%99%BA&quot;&gt;アジャイル開発&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E3%82%A2%E3%82%B8%E3%83%A3%E3%82%A4%E3%83%AB%E9%96%8B%E7%99%BA%E3%81%AE%E3%83%A1%E3%83%AA%E3%83%83%E3%83%88&quot;&gt;アジャイル開発のメリット&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E3%82%A2%E3%82%B8%E3%83%A3%E3%82%A4%E3%83%AB%E9%96%8B%E7%99%BA%E3%81%AE%E6%89%8B%E6%B3%95&quot;&gt;アジャイル開発の手法&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;アジャイル開発&lt;/h2&gt;
+&lt;p&gt;「アジャイル開発」っていうとなんかカッコいいしモダンっぽいというイメージをおそらく持っている人もいるでしょう。(私を含めて)
+逆に「ウォーターフォール開発」はなんか古臭いし、どこぞの金融系ぷ r、、おっと誰か来たみたいなのでこの辺で。&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;p&gt;とまあ、もてはやされたアジャイル開発ですが、フタを開けてみれば「要件定義 → 設計 → 実装 → テスト」の全工程を１つの単位として反復するという手法なのです。反復する期間はチームやプロジェクトによってまちまちですが、1 週間〜4 週間ほどです。
+ってことはですよ、V 字モデルのウォーターフォールを短いスパンで回してるだけ？、、それウォーターフォールじゃねぇか！！&lt;/p&gt;
+&lt;p&gt;、、というヤジも分からなくはありませんが、ちゃんとメリットがあります。&lt;/p&gt;
+&lt;br&gt;
+&lt;h2&gt;アジャイル開発のメリット&lt;/h2&gt;
+&lt;h3&gt;スピーディー(早い)&lt;/h3&gt;
+&lt;p&gt;だってそうですよね。ウォーターフォールでは全工程を段階的に進めていくのでリリースまでに時間がかかってしまいます。対してアジャイルでは前工程を１つのサイクルとして反復するのでリリースまでの期間が短く済みます。&lt;/p&gt;
+&lt;h3&gt;やすい(安い ×)&lt;/h3&gt;
+&lt;p&gt;しかもアジャイルは、開発サイクルが短い分、仕様変更や追加機能の対応がし&lt;strong&gt;やすい&lt;/strong&gt;というのもあります。ウォーターフォールだと、段階的に進めるので、１つの仕様変更があった場合、工程を戻すことになり、、おぉ、、考えただけでも恐ろしいですね。&lt;/p&gt;
+&lt;h3&gt;ユーザーファースト(うまい?)&lt;/h3&gt;
+&lt;p&gt;これも納得ですね。リリースが早い分、クライアント(ユーザー)に効率よく素早く提供できる → クライアント喜ぶ → 褒められる → 嬉しい=うまい?
+※これは数合わせです&lt;/p&gt;
+&lt;h2&gt;アジャイル開発の手法&lt;/h2&gt;
+&lt;p&gt;手法は以下の３つです。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;スクラム&lt;/li&gt;
+&lt;li&gt;エクストリームプログラミング&lt;/li&gt;
+&lt;li&gt;ユーザ機能駆動開発&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;p&gt;この中で私が経験したのは、スクラムのみです。(2020/07 時点)
+どのサイトでも言われている通り、この開発手法ではメンバーとのコミュニケーションが&lt;strong&gt;非常に&lt;/strong&gt;重要です。
+そのイテレーション(スプリント)でリリースする機能も複数人が関わっていたり、メンバー間での連携が必要な機能だったり。。極めつけは１つのアプリの全機能を全メンバーが把握しているのが是とされるので知らない機能は教えたり教わったりしないといけないからです。(これは私のチームだけなのかは知りませんが)
+、、とすごく大変そうに見えますが(実際に大変ですが)、スクラムならではの団体戦みのある開発でまあうまく回せるんではないでしょうかというのが感想です。&lt;/p&gt;
+&lt;h3&gt;余談&lt;/h3&gt;
+&lt;p&gt;今回はそんなに詳細には触れてません。(というのも私自身調べてて真新しい情報がなく、モチベーションが上がらなかった問題はありますが、、)
+とまあ日頃の開発スタイルを振り返るいい機会にはなったと感じます。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[球面三角法による２点間の距離計算]]></title><description><![CDATA[地球上の２点間の距離計算ってアプリだと Google Map API を使えば完了！だと思いますが、じゃあどう計算してるかって気になりますよね？
+今回は球面三角法を利用した地球上の２点間の距離計算を Go…]]></description><link>https://uh-zz.github.io/blog/2020/07/spherical-trigonometry/</link><guid isPermaLink="false">https://uh-zz.github.io/blog/2020/07/spherical-trigonometry/</guid><pubDate>Sat, 25 Jul 2020 08:12:03 GMT</pubDate><content:encoded>&lt;p&gt;地球上の２点間の距離計算ってアプリだと Google Map API を使えば完了！だと思いますが、じゃあどう計算してるかって気になりますよね？
+今回は球面三角法を利用した地球上の２点間の距離計算を Go で実装します。（調べたらフツーにあるんですが）&lt;/p&gt;
+&lt;h3&gt;目次&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#%E7%90%83%E9%9D%A2%E4%B8%89%E8%A7%92%E6%B3%95%E3%81%A8%E3%81%AF&quot;&gt;球面三角法とは&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E5%AE%9F%E8%A3%85&quot;&gt;実装&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E5%8B%95%E3%81%8B%E3%81%97%E3%81%A6%E3%81%BF%E3%82%8B&quot;&gt;動かしてみる&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;球面三角法とは&lt;/h2&gt;
+&lt;p&gt;その名の通り、三角関数を利用して球面上の辺や角の大きさを導出するものです。平面と球面とでの違いは辺の大きさが
+球面では中心角によって表されることにあります。&lt;/p&gt;
+&lt;p&gt;中学校で習った中心角と弧の長さの関係ですね。 $$ l = r\theta $$ (r は円の半径)&lt;/p&gt;
+&lt;p&gt;よって、球面三角法を使用して算出した弧の長さ(中心角)と赤道の半径を乗算すると距離が求まります。&lt;/p&gt;
+&lt;p&gt;球面三角法の証明については、&lt;a href=&quot;http://horibe.jp/PDFBOX/SphericalTriangles.pdf&quot;&gt;球面三角形の定理&lt;/a&gt;を参考にしていただきたいです。
+(“高校生に向けて”とある通り、非常にわかりやすかったです)&lt;/p&gt;
+&lt;p&gt;球面三角法の余弦定理を利用して実際に距離を算出する方法は&lt;a href=&quot;https://qiita.com/port-development/items/eea3a0a225be47db0fd4#%E7%90%83%E9%9D%A2%E4%B8%89%E8%A7%92%E6%B3%95%E3%81%AE%E4%BD%99%E5%BC%A6%E5%AE%9A%E7%90%86&quot;&gt;球面三角法の余弦定理&lt;/a&gt;がわかりやすいです。&lt;/p&gt;
+&lt;h2&gt;実装&lt;/h2&gt;
+&lt;p&gt;実装したソースコードは Github でも確認できます。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/uh-zz/traning/tree/master/algorithm/distance&quot;&gt;球面三角法を利用した２点間の距離計算&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;{% highlight go %}
+package main&lt;/p&gt;
+&lt;p&gt;import “math”&lt;/p&gt;
+&lt;p&gt;// Coordinate 緯度経度
+type Coordinate struct {
+Longitude float64
+Latitude float64
+}&lt;/p&gt;
+&lt;p&gt;// EarthRadius 赤道半径
+const EarthRadius = 6378140&lt;/p&gt;
+&lt;p&gt;// DistanceOnTheEarth 地球上の 2 点間の距離を出す（球面三角法）
+func DistanceOnTheEarth(from, to Coordinate) float64 {&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;fromLadLon := from.Longitude * math.Pi / 180
+fromLadLat := from.Latitude * math.Pi / 180
+
+toLadLon := to.Longitude * math.Pi / 180
+toLadLat := to.Latitude * math.Pi / 180
+
+alpha := math.Sin(fromLadLat)*math.Sin(toLadLat) +
+	math.Cos(fromLadLat)*math.Cos(toLadLat)*math.Cos(fromLadLon-toLadLon)
+
+arcAlpha := math.Acos(alpha)
+
+return arcAlpha * EarthRadius / 1000&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;}
+{% endhighlight %}&lt;/p&gt;
+&lt;h2&gt;動かしてみる&lt;/h2&gt;
+&lt;p&gt;それでは実装した Go の関数をコールする簡単なアプリで動かしていきます。
+※今回使用するアプリも Github 上の同じディレクトリにあるのでビルドしていただけると使用できます。&lt;/p&gt;
+&lt;p&gt;アプリの挙動としては、&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;2 点間の緯度経度情報を取得する（取得するために&lt;a href=&quot;http://geoapi.heartrails.com/api.html&quot;&gt;外部 API&lt;/a&gt;を利用します）&lt;/li&gt;
+&lt;li&gt;1 で取得した２点の緯度経度情報を今回実装した距離計算の関数へ渡して算出&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;比較するために&lt;a href=&quot;https://keisan.casio.jp/exec/system/1257670779&quot;&gt;こちらのサイト&lt;/a&gt;を利用します。&lt;/p&gt;
+&lt;h3&gt;結果&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;center&quot;&gt;場所&lt;/th&gt;
+&lt;th align=&quot;right&quot;&gt;比較サイト&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;Go アプリ&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;西東京市 ~ 大阪市都島区&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;383.344422&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;383.3444215569602&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;札幌市厚別区　~ 沖縄市&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;2,231.318234&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;2231.3182342761&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;※地球上の半径 r は 6378.140km にしています。&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;p&gt;。。。同じになってしまいました。。比較とはなんだったんだろう&lt;/p&gt;
+&lt;p&gt;まあよく捉えると、比較サイトのような便利計算サイトと同等?のものが作れたということでしょうか。&lt;/p&gt;
+&lt;h3&gt;余談&lt;/h3&gt;
+&lt;p&gt;久しぶりに証明を見たり計算を手で追っていく作業をしたので懐かしい気持ちになりました。普段の業務でそこまで計算式を使わない分、こう自発的に調べて実装するのも楽しいと思いました。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[ソートアルゴリズムの比較]]></title><description><![CDATA[バックエンドエンジニアのロードマップに沿ってエンジニアとしての自己肯定感を養うシリーズです。 目次 マージソート 挿入ソート 速度比較 マージソート マージソートは、ソートのアルゴリズムで、既に整列してある複数個の列を…]]></description><link>https://uh-zz.github.io/blog/2020/07/compare-sort-aligorithm/</link><guid isPermaLink="false">https://uh-zz.github.io/blog/2020/07/compare-sort-aligorithm/</guid><pubDate>Sun, 05 Jul 2020 08:12:03 GMT</pubDate><content:encoded>&lt;p&gt;バックエンドエンジニアの&lt;a href=&quot;https://github.com/kamranahmedse/developer-roadmap#back-end-roadmap&quot;&gt;ロードマップ&lt;/a&gt;に沿ってエンジニアとしての自己肯定感を養うシリーズです。&lt;/p&gt;
+&lt;h3&gt;目次&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#%E3%83%9E%E3%83%BC%E3%82%B8%E3%82%BD%E3%83%BC%E3%83%88&quot;&gt;マージソート&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E6%8C%BF%E5%85%A5%E3%82%BD%E3%83%BC%E3%83%88&quot;&gt;挿入ソート&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%E9%80%9F%E5%BA%A6%E6%AF%94%E8%BC%83&quot;&gt;速度比較&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;マージソート&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;マージソートは、ソートのアルゴリズムで、既に整列してある複数個の列を 1 個の列にマージする際に、小さいものから先に新しい列に並べれば、新しい列も整列されている、というボトムアップの分割統治法による。大きい列を多数の列に分割し、そのそれぞれをマージする作業は並列化できる。
+出典：&lt;a href=&quot;https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%BC%E3%82%B8%E3%82%BD%E3%83%BC%E3%83%88#:~:text=%E3%83%9E%E3%83%BC%E3%82%B8%E3%82%BD%E3%83%BC%E3%83%88%E3%81%AF%E3%80%81%E3%82%BD%E3%83%BC%E3%83%88%E3%81%AE,%E4%BD%9C%E6%A5%AD%E3%81%AF%E4%B8%A6%E5%88%97%E5%8C%96%E3%81%A7%E3%81%8D%E3%82%8B%E3%80%82&quot;&gt;wikipedia「マージソート」より引用&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;最悪の計算量が O($$ n log n $$) であるから少なくとも O($$ n^{2} $$)よりは速いんだろうなという印象（雑すぎるか）&lt;/p&gt;
+&lt;p&gt;以下「&lt;a href=&quot;https://qiita.com/drken/items/44c60118ab3703f7727f&quot;&gt;ソートを極める！ 〜 なぜソートを学ぶのか 〜&lt;/a&gt;」を元に Golang で実装してみた（なるべくソースを見ないで実装を試みたがマージする箇所は折れた、、）&lt;/p&gt;
+&lt;p&gt;{% highlight go %}
+package main&lt;/p&gt;
+&lt;p&gt;import (
+“fmt”
+“time”&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;quot;github.com/uh-zz/traning/algorithm/shuffle&amp;quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;)&lt;/p&gt;
+&lt;p&gt;func main() {
+// ランダムな要素 n 個のスライス取得
+input := shuffle.RandomIntList(n)&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;inputLength := len(input)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;// マージソート
+MergeSort(&amp;#x26;input, 0, inputLength)
+}&lt;/p&gt;
+&lt;p&gt;// MergeSort マージソート
+func MergeSort(input *[]int, left, right int) {&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// 要素数1つの場合は抜ける
+if right-left == 1 {
+	return
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;// 配列を２つに分けるインデックス
+middle := left + (right-left)/2&lt;/p&gt;
+&lt;p&gt;// 配列左側
+MergeSort(input, left, middle)
+// 配列右側
+MergeSort(input, middle, right)&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;var buffer []int
+
+// 左側と右側をバッファにためる（右側反転）
+for index := left; index &amp;lt; middle; index++ {
+	buffer = append(buffer, (*input)[index])
+}
+for index := right - 1; index &amp;gt;= middle; index-- {
+	buffer = append(buffer, (*input)[index])
+}
+
+// マージする
+scopeLeft := 0
+scopeRight := len(buffer) - 1
+for index := left; index &amp;lt; right; index++ {
+
+	if buffer[scopeLeft] &amp;lt;= buffer[scopeRight] {
+		// 左側採用
+		(*input)[index] = buffer[scopeLeft]
+		scopeLeft++
+	} else {
+		// 右側採用
+		(*input)[index] = buffer[scopeRight]
+		scopeRight--
+	}
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;}
+{% endhighlight %}&lt;/p&gt;
+&lt;p&gt;これ考えたのぶっ飛んでるなあと思って Wikipedia 見てたら、考案者&lt;a href=&quot;https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A7%E3%83%B3%E3%83%BB%E3%83%95%E3%82%A9%E3%83%B3%E3%83%BB%E3%83%8E%E3%82%A4%E3%83%9E%E3%83%B3&quot;&gt;フォン・ノイマン&lt;/a&gt;でやっぱりぶっ飛んでた（凄すぎ）&lt;/p&gt;
+&lt;h2&gt;挿入ソート&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;挿入ソート（インサーションソート）は、ソートのアルゴリズムの一つ。整列してある配列に追加要素を適切な場所に挿入すること。平均計算時間・最悪計算時間がともに O(n2)と遅いが、アルゴリズムが単純で実装が容易なため、しばしば用いられる。安定な内部ソート。基本挿入法ともいう。in-place アルゴリズムであり、オンラインアルゴリズムである。
+出典：&lt;a href=&quot;https://ja.wikipedia.org/wiki/%E6%8C%BF%E5%85%A5%E3%82%BD%E3%83%BC%E3%83%88&quot;&gt;wikipedia「挿入ソート」より引用&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;これも「&lt;a href=&quot;https://qiita.com/drken/items/44c60118ab3703f7727f&quot;&gt;ソートを極める！ 〜 なぜソートを学ぶのか 〜&lt;/a&gt;」を元に Golang で実装してみた&lt;/p&gt;
+&lt;p&gt;{% highlight go %}
+package main&lt;/p&gt;
+&lt;p&gt;import (
+“fmt”
+“time”&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;quot;github.com/uh-zz/traning/algorithm/shuffle&amp;quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;)&lt;/p&gt;
+&lt;p&gt;func main() {&lt;/p&gt;
+&lt;p&gt;// ランダムな要素 n 個のスライス
+input := shuffle.RandomIntList(n)&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// 挿入ソート
+for index := 1; index &amp;lt; len(input); index++ {
+
+	// 挿入したい値
+	insertValue := input[index]
+
+	// 挿入位置
+	point := index
+	for ; point &amp;gt; 0; point-- {
+		if input[point-1] &amp;gt; insertValue {
+			input[point] = input[point-1]
+		} else {
+			break
+		}
+	}
+	input[point] = insertValue
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;}
+{% endhighlight %}&lt;/p&gt;
+&lt;p&gt;こっちは実装もしやすく理解するのも難しくないという印象。最終的にはどちらもソートするというのにこの差は、、と思ってしまう。&lt;/p&gt;
+&lt;h2&gt;速度比較&lt;/h2&gt;
+&lt;p&gt;今回はソートアルゴリズムの実装がメインだったけど、２つあるなら比較するまでがアウトプットだろうなと感じたので比較します。&lt;/p&gt;
+&lt;h3&gt;マシンスペック&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;OS: macOS Catalina&lt;/li&gt;
+&lt;li&gt;プロセッサ: 1.6 GHz(Core i5)&lt;/li&gt;
+&lt;li&gt;メモリ: 16 GB&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;実施方法&lt;/h3&gt;
+&lt;p&gt;要素数 n 個のスライスのソート時間を比較する。要素はそれぞれランダムになっている。&lt;/p&gt;
+&lt;h3&gt;結果&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;right&quot;&gt;要素数(n)&lt;/th&gt;
+&lt;th align=&quot;right&quot;&gt;マージソート(O($$ n log n $$))(sec)&lt;/th&gt;
+&lt;th align=&quot;right&quot;&gt;挿入ソート(O($$ n^{2} $$))(sec)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&quot;right&quot;&gt;1,000&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;0.000357&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;0.000277&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;right&quot;&gt;10,000&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;0.005002&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;0.024778&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;right&quot;&gt;100,000&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;0.036705&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;1.524296&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;right&quot;&gt;1,000,000&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;0.341336&lt;/td&gt;
+&lt;td align=&quot;right&quot;&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;※挿入ソート（1,000,000）は 1 分以上かかったので省略&lt;/p&gt;
+&lt;p&gt;要素が倍になるほどマージソートの速さがわかりますね。&lt;/p&gt;
+&lt;p&gt;このページのソースは GitHub にもあります。
+&lt;a href=&quot;https://github.com/uh-zz/traning/tree/master/algorithm&quot;&gt;ソートアルゴリズムの比較&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;余談&lt;/h3&gt;
+&lt;p&gt;アルゴリズムを１ヶ月で把握しようとしてましたがソートアルゴリズムの雰囲気を掴むだけでそれくらい時間かかりました、、１つずつ精進ですね。。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[DynamoDBのソートキーだけで絞り込みたいとき]]></title><description><![CDATA[Dynamo のテーブルに GSI…]]></description><link>https://uh-zz.github.io/blog/2020/06/dynamo-only-sortkey-without-partionkey/</link><guid isPermaLink="false">https://uh-zz.github.io/blog/2020/06/dynamo-only-sortkey-without-partionkey/</guid><pubDate>Fri, 05 Jun 2020 08:12:03 GMT</pubDate><content:encoded>&lt;p&gt;Dynamo のテーブルに GSI(グローバルセカンダリインデックス)を貼って
+ハッシュキー＋ソートキーでクエリするパターンが通常の使い方かと思います。&lt;/p&gt;
+&lt;p&gt;ではソートキーを日付にしていた場合、同じ日付範囲のデータを一括で
+取得できる方法はありますでしょうか。。&lt;/p&gt;
+&lt;p&gt;公式ドキュメントにはその辺の Tips がありませんでした(*私調べ)が、
+以下の記事を教えてもらいました。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.ketancho.net/entry/2018/01/30/075500#%E8%A8%AD%E8%A8%88%EF%BC%92%E3%83%80%E3%83%9F%E3%83%BC%E5%88%97%E3%81%AB%E5%AF%BE%E3%81%97%E3%81%A6%E3%82%B0%E3%83%AD%E3%83%BC%E3%83%90%E3%83%AB%E3%82%BB%E3%82%AB%E3%83%B3%E3%83%80%E3%83%AA%E3%82%A4%E3%83%B3%E3%83%87%E3%83%83%E3%82%AF%E3%82%B9%E3%82%92%E8%B2%BC%E3%82%8B%E6%A1%88&quot;&gt;DynamoDB の設計力をあげたい&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;これの設計２を参考にさせてもらいました。&lt;/p&gt;
+&lt;p&gt;全データ共通のダミー列を用意して、以下の GSI を作成します。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;パーティションキーはダミー列&lt;/li&gt;
+&lt;li&gt;ソートキーに日付&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;これで同じ日付範囲の複数データを引っ張ってくることが可能になります。&lt;/p&gt;
+&lt;p&gt;確かに美しいと言えないかもしれませんが、機転の効いた方法だと思いました。&lt;/p&gt;
+&lt;p&gt;もっといい方法あればまた記事書きます。&lt;/p&gt;</content:encoded></item></channel></rss>
