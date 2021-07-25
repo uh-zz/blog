@@ -1,12 +1,9 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "small-land",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "Maybe small and insignificant, but have been kept alive",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  },
+  "author": "uh-zz <uh-zz.contact@gmail.com>",
   "dependencies": {
     "gatsby": "^3.6.2",
     "gatsby-cli": "^3.6.0",
