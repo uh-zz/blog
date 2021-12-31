@@ -2,6 +2,7 @@
 title: "DynamoDBのソートキーだけで絞り込みたいとき"
 date: "2020-06-05T08:12:03.284Z"
 description: "DynamoDBのソートキーだけで絞り込みたいとき"
+tags: ["DynamoDB", "aws"]
 ---
 
 Dynamo のテーブルに GSI(グローバルセカンダリインデックス)を貼って

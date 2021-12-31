@@ -1,7 +1,8 @@
 ---
 title: "システム設計-part3-"
 date: "2020-12-05T08:12:03.284Z"
-description: "システム設計-part3-"
+description: "システム設計-part3"
+tags: ["software architect", "ddd"]
 ---
 
 バックエンドエンジニアの[ロードマップ][ロードマップ]に沿ってエンジニアとしての自己肯定感を養うシリーズです。

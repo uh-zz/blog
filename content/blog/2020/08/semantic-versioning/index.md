@@ -2,6 +2,7 @@
 title: "Semantic Versioning"
 date: "2020-08-10T08:12:03.284Z"
 description: "Semantic Versioning"
+tags: ["oss"]
 ---
 
 バックエンドエンジニアの[ロードマップ][ロードマップ]に沿ってエンジニアとしての自己肯定感を養うシリーズです。
